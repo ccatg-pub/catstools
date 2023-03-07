@@ -1,0 +1,212 @@
+{
+    "metaData": {
+        "schemaVersion": "1.2.0",
+        "referenceGenome": {
+            "grcRelease": "GRCh37"
+        }
+    },
+    "testInfo": {
+        "testId": "sample_study_04",
+        "testType": "tumor-only",
+        "panelName": "testPanel",
+        "panelVersion": "1.0"
+    },
+    "variants": {
+        "shortVariants": [
+            {
+                "itemId": "variant-1",
+                "chromosome": "11",
+                "position": 108200963,
+                "referenceAllele": "G",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.0,
+                "transcripts": [
+                    {
+                        "transcriptId": "ENST00000278616",
+                        "transcriptDatabaseName": "Ensembl",
+                        "geneSymbol": "ATM",
+                        "strand": "+",
+                        "cdsChange": "c.7330G>A",
+                        "aminoAcidsChange": "p.Glu2444Lys"
+                    }
+                ],
+                "sampleItemId": "P01_Pri",
+                "reported": true
+            },
+            {
+                "itemId": "variant-2",
+                "chromosome": "9",
+                "position": 133748288,
+                "referenceAllele": "T",
+                "alternateAllele": "C",
+                "alternateAlleleFrequency": 0.0,
+                "transcripts": [
+                    {
+                        "transcriptId": "NM_00000372348",
+                        "transcriptDatabaseName": "RefSeq",
+                        "geneSymbol": "ABL1",
+                        "strand": "+",
+                        "cdsChange": "c.1006T>C",
+                        "aminoAcidsChange": "p.Phe336Leu"
+                    }
+                ],
+                "sampleItemId": "P02_Pri",
+                "variantOrigin": "germline",
+                "reported": true
+            }
+        ],
+        "copyNumberAlterations": [
+            {
+                "itemId": "variant-3",
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "CDK4"
+                    }
+                ],
+                "sampleItemId": "P01_Pri",
+                "reported": true
+            },
+            {
+                "itemId": "variant-4",
+                "copyNumberAlterationType": "loss",
+                "transcripts": [
+                    {
+                        "geneSymbol": "RAD51C"
+                    }
+                ],
+                "sampleItemId": "P01_Pri",
+                "reported": true
+            }
+        ],
+        "rearrangements": [
+            {
+                "itemId": "variant-5",
+                "breakends": [
+                    {
+                        "chromosome": "2",
+                        "startPosition": 42492091,
+                        "endPosition": 42492091,
+                        "transcripts": [
+                            {
+                                "transcriptId": "ENST00000318522",
+                                "transcriptDatabaseName": "Ensembl",
+                                "geneSymbol": "EML4"
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "2",
+                        "startPosition": 29446394,
+                        "endPosition": 29446394,
+                        "transcripts": [
+                            {
+                                "transcriptId": "ENST00000389048",
+                                "transcriptDatabaseName": "Ensembl",
+                                "geneSymbol": "ALK"
+                            }
+                        ]
+                    }
+                ],
+                "rearrangementType": "FUSION",
+                "sampleItemId": "P01_Pri",
+                "reported": true
+            },
+            {
+                "itemId": "variant-6",
+                "breakends": [
+                    {
+                        "chromosome": "2",
+                        "startPosition": 42492091,
+                        "endPosition": 42492091,
+                        "transcripts": [
+                            {
+                                "transcriptId": "NM_00000318522",
+                                "transcriptDatabaseName": "RefSeq",
+                                "geneSymbol": "EML4"
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "2",
+                        "startPosition": 29446394,
+                        "endPosition": 29446394,
+                        "transcripts": [
+                            {
+                                "transcriptId": "NM_00000389048",
+                                "transcriptDatabaseName": "RefSeq",
+                                "geneSymbol": "ALK"
+                            }
+                        ]
+                    }
+                ],
+                "rearrangementType": "FUSION",
+                "sampleItemId": "P03_Pri",
+                "reported": true
+            }
+        ]
+    },
+    "otherBiomarkers": [
+        {
+            "itemId": "biomarker-1",
+            "biomarkerType": "TMB",
+            "biomarkerMetrics": [
+                {
+                    "value": 1.3,
+                    "unit": null,
+                    "metricType": "TMB_NONSYNONYMOUS"
+                }
+            ],
+            "sampleItemId": "P01_Pri",
+            "reported": true
+        },
+        {
+            "itemId": "biomarker-2",
+            "biomarkerType": "MSI",
+            "biomarkerMetrics": [
+                {
+                    "value": 0.533333333333,
+                    "unit": null,
+                    "metricType": "MSI_SENSOR_SCORE"
+                }
+            ],
+            "sampleItemId": "P01_Pri",
+            "reported": true
+        }
+    ],
+    "expressions": [
+        {
+            "itemId": "expression-1",
+            "transcripts": [
+                {
+                    "geneSymbol": "ALK"
+                }
+            ],
+            "expressionLevelMetrics": [
+                {
+                    "value": 26.87,
+                    "unit": ""
+                }
+            ],
+            "sampleItemId": "P03_Pri",
+            "reported": true
+        }
+    ],
+    "sequencingSamples": [
+        {
+            "itemId": "P01_Pri",
+            "tumorOrNormal": "tumor",
+            "nucleicAcid": "DNA"
+        },
+        {
+            "itemId": "P02_Pri",
+            "tumorOrNormal": "normal",
+            "nucleicAcid": "DNA"
+        },
+        {
+            "itemId": "P03_Pri",
+            "tumorOrNormal": "tumor",
+            "nucleicAcid": "RNA"
+        }
+    ]
+}

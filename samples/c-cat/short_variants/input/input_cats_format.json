@@ -1,0 +1,164 @@
+{
+    "metaData": {
+        "schemaVersion": "1.2.0",
+        "referenceGenome": {
+            "grcRelease": "GRCh38"
+        }
+    },
+    "testInfo": {
+        "testId": "1234567890",
+        "testType": "tumor-only",
+        "panelName": "defaultPanel",
+        "panelVersion": "0.1"
+    },
+    "variants": {
+        "shortVariants": [
+            {
+                "itemId": "variant-1",
+                "chromosome": "9",
+                "position": 135781005,
+                "referenceAllele": "C",
+                "alternateAllele": "G",
+                "alternateAlleleFrequency": 0.54,
+                "alternateAlleleReadDepth": 108,
+                "totalReadDepth": 200,
+                "variantType": "SNV",
+                "transcripts": [
+                    {
+                        "transcriptId": "NM_000368.4",
+                        "transcriptDatabaseName": "RefSeq",
+                        "transcriptDatabaseVersion": "Release 99",
+                        "geneSymbol": "TSC1",
+                        "cdsChange": "c.1960C>G",
+                        "aminoAcidsChange": "p.Q654E",
+                        "calculatedEffects": [
+                            "missense_variant"
+                        ]
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "matched": true,
+                "reported": true
+            },
+            {
+                "itemId": "variant-2",
+                "chromosome": "8",
+                "position": 37553560,
+                "referenceAllele": "A",
+                "alternateAllele": "AAGCGGC",
+                "alternateAlleleFrequency": 0.4953,
+                "alternateAlleleReadDepth": 368,
+                "totalReadDepth": 743,
+                "variantType": "insertion",
+                "transcripts": [
+                    {
+                        "transcriptId": "NM_025069.2",
+                        "transcriptDatabaseName": "RefSeq",
+                        "transcriptDatabaseVersion": "Release 99",
+                        "geneSymbol": "ZNF703",
+                        "cdsChange": "c.63_64insAGCGGC",
+                        "aminoAcidsChange": "G21_G22insSG"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "matched": true,
+                "reported": true
+            },
+            {
+                "itemId": "variant-3",
+                "chromosome": "1",
+                "position": 27097751,
+                "referenceAllele": "TC",
+                "alternateAllele": "T",
+                "alternateAlleleFrequency": 0.12,
+                "alternateAlleleReadDepth": 32,
+                "totalReadDepth": 266,
+                "variantType": "deletion",
+                "transcripts": [
+                    {
+                        "transcriptId": "ENST00000324856.13",
+                        "transcriptDatabaseName": "Ensembl",
+                        "transcriptDatabaseVersion": "v99",
+                        "geneSymbol": "ARID1A",
+                        "cdsChange": "c.3340delC",
+                        "aminoAcidsChange": "p.P1115fs*46",
+                        "calculatedEffects": [
+                            "frameshift_variant"
+                        ]
+                    }
+                ],
+                "sampleItemId": "sequence-3-normal-dna",
+                "variantOrigin": "germline",
+                "matched": true,
+                "reported": true
+            },
+            {
+                "itemId": "variant-4",
+                "chromosome": "1",
+                "position": 26696982,
+                "referenceAllele": "GC",
+                "alternateAllele": "TT",
+                "alternateAlleleFrequency": 0.25,
+                "alternateAlleleReadDepth": 52,
+                "totalReadDepth": 524,
+                "variantType": "delins",
+                "transcripts": [
+                    {
+                        "transcriptId": "NM_007294.4",
+                        "transcriptDatabaseName": "RefSeq",
+                        "transcriptDatabaseVersion": "Release 99",
+                        "geneSymbol": "BRCA1",
+                        "cdsChange": "c.579_580delinsTT",
+                        "aminoAcidsChange": "p.E193_P194delinsDS"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "matched": true,
+                "reported": true
+            },
+            {
+                "itemId": "variant-5",
+                "chromosome": "5",
+                "position": 1295113,
+                "referenceAllele": "G",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.163,
+                "alternateAlleleReadDepth": 15.9,
+                "totalReadDepth": 92,
+                "variantType": "SNV",
+                "transcripts": [
+                    {
+                        "transcriptId": "ENST00000310581.9",
+                        "transcriptDatabaseName": "Ensembl",
+                        "transcriptDatabaseVersion": "Release 99",
+                        "geneSymbol": "TERT",
+                        "cdsChange": "n.1295113C>T",
+                        "aminoAcidsChange": null,
+                        "calculatedEffects": [
+                            "TF_binding_site_variant"
+                        ]
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "matched": true,
+                "reported": true
+            }
+        ]
+    },
+    "sequencingSamples": [
+        {
+            "itemId": "sequence-1-tumor-dna",
+            "tumorOrNormal": "tumor",
+            "nucleicAcid": "DNA"
+        },
+        {
+            "itemId": "sequence-3-normal-dna",
+            "tumorOrNormal": "normal",
+            "nucleicAcid": "DNA"
+        }
+    ]
+}

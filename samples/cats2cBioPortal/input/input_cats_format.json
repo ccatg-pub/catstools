@@ -1,0 +1,226 @@
+{
+    "metaData": {
+        "schemaVersion": "1.2.0",
+        "referenceGenome": {
+            "grcRelease": "GRCh38"
+        }
+    },
+    "testInfo": {
+        "testId": "1234567890",
+        "testType": "tumor-only",
+        "panelName": "defaultPanel",
+        "panelVersion": "0.1"
+    },
+    "variants": {
+        "shortVariants": [
+            {
+                "itemId": "variant-1",
+                "chromosome": "1",
+                "position": 204538232,
+                "referenceAllele": "T",
+                "alternateAllele": "C",
+                "alternateAlleleFrequency": 0.8023,
+                "totalReadDepth": 177,
+                "variantType": "SNV",
+                "transcripts": [
+                    {
+                        "transcriptId": "NM_001278516",
+                        "transcriptDatabaseName": "RefSeq",
+                        "transcriptDatabaseVersion": "version",
+                        "geneSymbol": "MDM4",
+                        "cdsChange": "c.367T>C",
+                        "aminoAcidsChange": "p.F123L"
+                    }
+                ],
+                "sampleItemId": "sample-1",
+                "variantOrigin": "somatic",
+                "reported": true
+            }
+        ],
+        "copyNumberAlterations": [
+            {
+                "itemId": "variant-2",
+                "chromosome": "2",
+                "startPosition": 15940550,
+                "endPosition": 15947003,
+                "copyNumberMetrics": [
+                    {
+                        "value": 2.1829,
+                        "unit": "log2 fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "MYCN"
+                    }
+                ],
+                "sampleItemId": "sample-1",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-3",
+                "chromosome": "2",
+                "startPosition": 15940550,
+                "endPosition": 15947003,
+                "copyNumberMetrics": [
+                    {
+                        "value": 2.1829,
+                        "unit": "log2 fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "loss",
+                "transcripts": [
+                    {
+                        "geneSymbol": "MYCN"
+                    }
+                ],
+                "sampleItemId": "sample-1",
+                "variantOrigin": "somatic",
+                "reported": true
+            }
+        ],
+        "rearrangements": [
+            {
+                "itemId": "variant-4",
+                "breakends": [
+                    {
+                        "chromosome": "2",
+                        "startPosition": 211630595,
+                        "endPosition": 211630595,
+                        "matePieceLocation": "upstream",
+                        "transcripts": [
+                            {
+                                "geneSymbol": "ERBB4"
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "5",
+                        "startPosition": 150404767,
+                        "endPosition": 150404767,
+                        "matePieceLocation": "downstream",
+                        "transcripts": [
+                            {
+                                "geneSymbol": "CD74"
+                            }
+                        ]
+                    }
+                ],
+                "orderedGenePairs": [
+                    ["CD74", "ERBB4"]
+                ],
+                "rearrangementType": "gene fusion",
+                "sampleItemId": "sample-1",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-5",
+                "breakends": [
+                    {
+                        "chromosome": "7",
+                        "startPosition": 116771654,
+                        "endPosition": 116771655,
+                        "transcripts": [
+                            {
+                                "geneSymbol": "MET"
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "7",
+                        "startPosition": 116774881,
+                        "endPosition": 116774882,
+                        "transcripts": [
+                            {
+                                "geneSymbol": "MET"
+                            }
+                        ]
+                    }
+                ],
+                "skippedExonRanges": [
+                    {
+                        "transcriptId": "NM_000245",
+                        "transcriptDatabaseName": "RefSeq",
+                        "transcriptDatabaseVersion": "Release 99",
+                        "geneSymbol": "MET",
+                        "exonRange": [
+                            14,
+                            14
+                        ]
+                    }
+                ],
+                "rearrangementType": "exon skipping",
+                "sampleItemId": "sample-1",
+                "variantOrigin": "somatic",
+                "reported": true
+            }
+        ]
+    },
+    "otherBiomarkers": [
+        {
+            "itemId": "biomarker-1",
+            "biomarkerType": "TMB",
+            "biomarkerMetrics": [
+                {
+                    "value": 1.11,
+                    "unit": "mutations-per-megabase",
+                    "metricType": "mutations-per-megabase"
+                }
+            ],
+            "sampleItemId": "sample-1",
+            "reported": true
+        },
+        {
+            "itemId": "biomarker-2",
+            "biomarkerType": "MSI",
+            "biomarkerMetrics": [
+                {
+                    "value": 4.44,
+                    "unit": "mutations-per-megabase",
+                    "metricType": "mutations-per-megabase"
+                }
+            ],
+            "sampleItemId": "sample-1",
+            "reported": true
+        }
+    ],
+    "expressions": [
+        {
+            "itemId": "expression-1",
+            "readCount": 9928,
+            "transcripts": [
+                {
+                    "transcriptDatabaseName": "RefSeq",
+                    "transcriptDatabaseVersion": "Release99",
+                    "geneSymbol": "MET"
+                }
+            ],
+            "expressionLevelMetrics": [
+                {
+                    "value": 142.7,
+                    "unit": "TPM",
+                    "statisticType": "mean",
+                    "sampleSize": 20,
+                    "isControl": true
+                }
+            ],
+            "sampleItemId": "sample-1",
+            "reported": true
+        }
+    ],
+    "sequencingSamples": [
+        {
+            "itemId": "sample-1",
+            "tumorOrNormal": "tumor",
+            "nucleicAcid": "DNA"
+        },
+        {
+            "itemId": "sample-2",
+            "tumorOrNormal": "normal",
+            "nucleicAcid": "DNA"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "rearrangements": [
+        {
+            "breakends": [
+                {
+                    "chromosome": "2",
+                    "startPosition": 42510050,
+                    "endPosition": 42510050,
+                    "transcripts": [
+                        {
+                            "geneSymbol": "EML4"
+                        }
+                    ]
+                },
+                {
+                    "chromosome": "2",
+                    "startPosition": 29445240,
+                    "endPosition": 29445240,
+                    "transcripts": [
+                        {
+                            "geneSymbol": "ALK"
+                        }
+                    ]
+                }
+            ],
+            "skippedExonRanges": [],
+            "rearrangementType": "rearrangements",
+            "cytoband": "chr2:42510050-chr2:29445240"
+        }
+    ]
+}

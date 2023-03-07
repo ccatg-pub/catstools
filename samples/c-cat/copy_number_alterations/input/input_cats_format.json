@@ -1,0 +1,53 @@
+{
+    "metaData": {
+        "schemaVersion": "1.2.0",
+        "referenceGenome": {
+            "grcRelease": "GRCh38"
+        }
+    },
+    "testInfo": {
+        "testId": "1234567890",
+        "testType": "tumor-only",
+        "panelName": "defaultPanel",
+        "panelVersion": "0.1"
+    },
+    "variants": {
+        "copyNumberAlterations": [
+            {
+                "itemId": "variant-9",
+                "chromosome": "1",
+                "startPosition": 8921059,
+                "endPosition": 8939151,
+                "copyNumberMetrics": [
+                    {
+                        "value": 0.2309,
+                        "unit": "fold-change"
+                    },
+                    {
+                        "value": -2.1147,
+                        "unit": "log2 fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "loss",
+                "transcripts": [
+                    {
+                        "transcriptDatabaseName": "RefSeq",
+                        "transcriptDatabaseVersion": "Release 99",
+                        "geneSymbol": "ENO1"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "matched": true,
+                "reported": true
+            }
+        ]
+    },
+    "sequencingSamples": [
+        {
+            "itemId": "sequence-1-tumor-dna",
+            "tumorOrNormal": "tumor",
+            "nucleicAcid": "DNA"
+        }
+    ]
+}

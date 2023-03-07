@@ -1,0 +1,210 @@
+{
+    "metaData": {
+        "schemaVersion": "1.2.0",
+        "referenceGenome": {
+            "grcRelease": "GRCh38"
+        }
+    },
+    "testInfo": {
+        "testId": "1234567890",
+        "testType": "tumor-only",
+        "panelName": "defaultPanel",
+        "panelVersion": "0.1"
+    },
+    "variants": {
+        "rearrangements": [
+            {
+                "itemId": "variant-13",
+                "breakends": [
+                    {
+                        "chromosome": "2",
+                        "startPosition": 42510050,
+                        "endPosition": 42510050,
+                        "matePieceLocation": "downstream",
+                        "transcripts": [
+                            {
+                                "transcriptDatabaseName": "RefSeq",
+                                "transcriptDatabaseVersion": "Release 99",
+                                "geneSymbol": "EML4"
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "2",
+                        "startPosition": 29445240,
+                        "endPosition": 29445240,
+                        "matePieceLocation": "upstream",
+                        "transcripts": [
+                            {
+                                "transcriptDatabaseName": "RefSeq",
+                                "transcriptDatabaseVersion": "Release 99",
+                                "geneSymbol": "ALK"
+                            }
+                        ]
+                    }
+                ],
+                "orderedGenePairs": [
+                    [
+                        "EML4",
+                        "ALK"
+                    ]
+                ],
+                "supportingReadCount": 30,
+                "totalReadCount": 430,
+                "alternateAlleleFrequency": 0.07,
+                "rearrangementType": "gene fusion",
+                "variantOrigin": "somatic",
+                "sampleItemId": "sequence-1-tumor-dna",
+                "reported": true
+            },
+            {
+                "itemId": "variant-14",
+                "breakends": [
+                    {
+                        "chromosome": "2",
+                        "startPosition": 42510050,
+                        "endPosition": 42510050,
+                        "matePieceLocation": "downstream",
+                        "totalReadCount": 330,
+                        "alternateAlleleFrequency": 0.06,
+                        "transcripts": [
+                            {
+                                "transcriptDatabaseName": "RefSeq",
+                                "transcriptDatabaseVersion": "Release 99",
+                                "geneSymbol": "EML4"
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "2",
+                        "startPosition": 29445240,
+                        "endPosition": 29445240,
+                        "matePieceLocation": "upstream",
+                        "totalReadCount": 570,
+                        "alternateAlleleFrequency": 0.07,
+                        "transcripts": [
+                            {
+                                "transcriptDatabaseName": "RefSeq",
+                                "transcriptDatabaseVersion": "Release 99",
+                                "geneSymbol": "ALK"
+                            }
+                        ]
+                    }
+                ],
+                "orderedGenePairs": [
+                    [
+                        "EML4",
+                        "ALK"
+                    ]
+                ],
+                "supportingReadCount": 30,
+                "rearrangementType": "other",
+                "variantOrigin": "somatic",
+                "sampleItemId": "sequence-1-tumor-dna",
+                "matched": true,
+                "reported": true
+            },
+            {
+                "itemId": "variant-15",
+                "breakends": [
+                    {
+                        "chromosome": "14",
+                        "startPosition": 234567,
+                        "endPosition": 234567,
+                        "matePieceLocation": "downstream",
+                        "transcripts": [
+                            {
+                                "transcriptDatabaseName": "RefSeq",
+                                "transcriptDatabaseVersion": "Release 99",
+                                "geneSymbol": null
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "2",
+                        "startPosition": 321672,
+                        "endPosition": 321672,
+                        "matePieceLocation": "upstream",
+                        "transcripts": [
+                            {
+                                "transcriptDatabaseName": "RefSeq",
+                                "transcriptDatabaseVersion": "Release 99",
+                                "geneSymbol": "LINC01865"
+                            }
+                        ]
+                    }
+                ],
+                "insertedSequence": "GTNNNNNCAT",
+                "supportingReadCount": 30,
+                "alternateAlleleFrequency": 0.07,
+                "rearrangementType": "gene fusion",
+                "variantOrigin": "somatic",
+                "sampleItemId": "sequence-2-tumor-rna",
+                "matched": true,
+                "reported": true
+            },
+            {
+                "itemId": "variant-16",
+                "breakends": [
+                    {
+                        "chromosome": "7",
+                        "startPosition": 116771654,
+                        "endPosition": 116771654,
+                        "transcripts": [
+                            {
+                                "transcriptId": "NM_000245",
+                                "transcriptDatabaseName": "RefSeq",
+                                "transcriptDatabaseVersion": "Release 99",
+                                "geneSymbol": "MET"
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "7",
+                        "startPosition": 116774881,
+                        "endPosition": 116774881,
+                        "transcripts": [
+                            {
+                                "transcriptId": "NM_000245",
+                                "transcriptDatabaseName": "RefSeq",
+                                "transcriptDatabaseVersion": "Release 99",
+                                "geneSymbol": "MET"
+                            }
+                        ]
+                    }
+                ],
+                "skippedExonRanges": [
+                    {
+                        "transcriptId": "NM_000245",
+                        "transcriptDatabaseName": "RefSeq",
+                        "transcriptDatabaseVersion": "Release 99",
+                        "geneSymbol": "MET",
+                        "exonRange": [
+                            14,
+                            14
+                        ]
+                    }
+                ],
+                "supportingReadCount": 30,
+                "alternateAlleleFrequency": 0.07,
+                "rearrangementType": "exon skipping",
+                "variantOrigin": "somatic",
+                "sampleItemId": "sequence-2-tumor-rna",
+                "matched": false,
+                "reported": true
+            }
+        ]
+    },
+    "sequencingSamples": [
+        {
+            "itemId": "sequence-1-tumor-dna",
+            "tumorOrNormal": "tumor",
+            "nucleicAcid": "DNA"
+        },
+        {
+            "itemId": "sequence-2-tumor-rna",
+            "tumorOrNormal": "tumor",
+            "nucleicAcid": "RNA"
+        }
+    ]
+}

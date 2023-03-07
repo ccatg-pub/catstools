@@ -1,0 +1,5 @@
+cancer_study_identifier: 1234567890
+stable_id: 1234567890_cnaseq
+case_list_name: CNASEQ samples
+case_list_description: CNASEQ samples description
+case_list_ids: 1234567890

@@ -1,0 +1,57 @@
+{
+    "metaData": {
+        "schemaVersion": "1.2.0",
+        "referenceGenome": {
+            "grcRelease": "GRCh38"
+        }
+    },
+    "testInfo": {
+        "testId": "1234567890",
+        "testType": "tumor-only",
+        "panelName": "defaultPanel",
+        "panelVersion": "0.1"
+    },
+    "expressions": [
+        {
+            "itemId": "expression-1",
+            "readCount": 9928,
+            "transcripts": [
+                {
+                    "transcriptDatabaseName": "RefSeq",
+                    "transcriptDatabaseVersion": "Release 99",
+                    "geneSymbol": "MET"
+                }
+            ],
+            "expressionLevelMetrics": [
+                {
+                    "value": 28.24,
+                    "unit": "TPM",
+                    "isControl": false
+                },
+                {
+                    "value": 142.7,
+                    "unit": "TPM",
+                    "statisticType": "mean",
+                    "sampleSize": 20,
+                    "isControl": true
+                },
+                {
+                    "value": 134.2,
+                    "unit": "TPM",
+                    "statisticType": "standard deviation",
+                    "sampleSize": 20,
+                    "isControl": true
+                }
+            ],
+            "sampleItemId": "sequence-4-normal-rna",
+            "reported": true
+        }
+    ],
+    "sequencingSamples": [
+        {
+            "itemId": "sequence-4-normal-rna",
+            "tumorOrNormal": "normal",
+            "nucleicAcid": "RNA"
+        }
+    ]
+}

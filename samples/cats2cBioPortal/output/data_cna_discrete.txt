@@ -1,0 +1,3 @@
+Hugo_Symbol	Entrez_Gene_Id	1234567890
+MYCN		2
+MYCN		-2

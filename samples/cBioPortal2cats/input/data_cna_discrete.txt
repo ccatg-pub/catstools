@@ -1,0 +1,3 @@
+Hugo_Symbol	Entrez_Gene_Id	P01_Pri	P12_Pri	P12_Rec
+CDK4	1019	2	0	0
+RAD51C	5889	-2	0	0
