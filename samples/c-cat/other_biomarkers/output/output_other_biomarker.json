@@ -1,0 +1,40 @@
+{
+    "TMB": {
+        "origin": "",
+        "state": "high",
+        "metrics": [
+            {
+                "value": 34.5680122,
+                "unit": "Muts/Mb",
+                "metricType": "Mutations per megabase"
+            }
+        ]
+    },
+    "MSI": {
+        "origin": "somatic",
+        "state": "stable",
+        "metrics": [
+            {
+                "value": 5.15,
+                "unit": "%",
+                "metricType": "percentage of MSI sites"
+            },
+            {
+                "value": 2,
+                "unit": null,
+                "metricType": "MSIsensor score"
+            }
+        ]
+    },
+    "LOH": {
+        "origin": "",
+        "state": "intermediate",
+        "metrics": [
+            {
+                "value": 24.14,
+                "unit": "%",
+                "metricType": "LOH score"
+            }
+        ]
+    }
+}

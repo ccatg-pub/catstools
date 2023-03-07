@@ -1,0 +1,5 @@
+#Patient Identifier	Sex	Diagnosis Age	Overall Survival (Months)	Overall Survival Status	Disease Free Status	Disease Free (Months)
+#Identifier to uniquely specify a patient.	Sex	Age at which a condition or disease was first diagnosed.	Overall survival in months since initial diagonosis.	Overall patient survival status.	Disease free status	Disease Free (Months)
+#STRING	STRING	NUMBER	NUMBER	STRING	STRING	NUMBER
+#1	1	1	1	9	1	1
+PATIENT_ID	SEX	AGE	OS_MONTHS	OS_STATUS	DFS_STATUS	DFS_MONTHS

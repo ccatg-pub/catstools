@@ -1,0 +1,7 @@
+{
+    "DNA_somatic_2:2_42510050-42510050:29445240-29445240_-_fusion_EML4|ALK": "variant-13",
+    "RNA_somatic_14:2_234567-234567:321672-321672_-_fusion_None|LINC01865": "variant-15",
+    "RNA_somatic_14:2_234567-234567:321672-321672_-_fusion_LINC01865|None": "variant-15",
+    "DNA_somatic_2:2_42510050-42510050:29445240-29445240_-_rearrangements_EML4": "variant-14",
+    "RNA_somatic_7:7_116771654-116771654:116774881-116774881_-_exon-skipping_MET": "variant-16"
+}

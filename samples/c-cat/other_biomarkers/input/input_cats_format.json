@@ -1,0 +1,76 @@
+{
+    "metaData": {
+        "schemaVersion": "1.2.0",
+        "referenceGenome": {
+            "grcRelease": "GRCh38"
+        }
+    },
+    "testInfo": {
+        "testId": "1234567890",
+        "testType": "tumor-only",
+        "panelName": "defaultPanel",
+        "panelVersion": "0.1"
+    },
+    "otherBiomarkers": [
+        {
+            "itemId": "biomarker-1",
+            "biomarkerType": "MSI",
+            "biomarkerMetrics": [
+                {
+                    "value": 5.15,
+                    "unit": "%",
+                    "metricType": "percentage of MSI sites"
+                },
+                {
+                    "value": 2,
+                    "unit": null,
+                    "metricType": "MSIsensor score"
+                }
+            ],
+            "state": "stable",
+            "descriptions": [
+                "MSI sensor score 10 points or more was MSI-H, 3 points or more and less than 10 points was indeterminate (MSI-I), and less than 3 points was microsatellite stable (MSS).",
+                "https: //www.gi-cancer.net/gi/ronbun/archives/201901-01.html"
+            ],
+            "biomarkerOrigin": "somatic",
+            "sampleItemId": "sequence-1-tumor-dna",
+            "matched": true,
+            "reported": true
+        },
+        {
+            "itemId": "biomarker-2",
+            "biomarkerType": "TMB",
+            "biomarkerMetrics": [
+                {
+                    "value": 34.5680122,
+                    "unit": "Muts/Mb",
+                    "metricType": "Mutations per megabase"
+                }
+            ],
+            "state": "high",
+            "sampleItemId": "sequence-1-tumor-dna",
+            "reported": true
+        },
+        {
+            "itemId": "biomarker-3",
+            "biomarkerType": "LOH",
+            "biomarkerMetrics": [
+                {
+                    "value": 24.14,
+                    "unit": "%",
+                    "metricType": "LOH score"
+                }
+            ],
+            "state": "intermediate",
+            "sampleItemId": "sequence-1-tumor-dna",
+            "reported": true
+        }
+    ],
+    "sequencingSamples": [
+        {
+            "itemId": "sequence-1-tumor-dna",
+            "tumorOrNormal": "tumor",
+            "nucleicAcid": "DNA"
+        }
+    ]
+}

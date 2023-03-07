@@ -1,0 +1,38 @@
+{
+    "rearrangements": [
+        {
+            "breakends": [
+                {
+                    "chromosome": "7",
+                    "startPosition": 116771654,
+                    "endPosition": 116771654,
+                    "transcripts": [
+                        {
+                            "geneSymbol": "MET"
+                        }
+                    ]
+                },
+                {
+                    "chromosome": "7",
+                    "startPosition": 116774881,
+                    "endPosition": 116774881,
+                    "transcripts": [
+                        {
+                            "geneSymbol": "MET"
+                        }
+                    ]
+                }
+            ],
+            "skippedExonRanges": [
+                {
+                    "exonRange": [
+                        14,
+                        14
+                    ]
+                }
+            ],
+            "rearrangementType": "exon skipping",
+            "cytoband": "chr7:116771654-chr7:116774881"
+        }
+    ]
+}

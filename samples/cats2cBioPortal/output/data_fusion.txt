@@ -1,0 +1,2 @@
+Hugo_Symbol	Entrez_Gene_Id	Center	Tumor_Sample_Barcode	Fusion	DNA_support	RNA_support	Method	Frame	Fusion_Status
+1234567890		NA	1234567890	ERBB4-ERBB4 fusion	yes	no	unknown	unknown	

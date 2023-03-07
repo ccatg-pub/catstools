@@ -1,0 +1,2 @@
+Hugo_Symbol	Entrez_Gene_Id	P03_Pri	P12_Pri	P12_Rec
+ALK	238	26.87	0	0

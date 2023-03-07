@@ -1,0 +1,5 @@
+type_of_cancer: type_of_cancer
+cancer_study_identifier: 1234567890
+name: 1234567890
+description: sample description
+reference_genome: hg19

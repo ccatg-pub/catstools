@@ -1,0 +1,1670 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/Schema",
+  "definitions": {
+    "Schema": {
+      "title": "Cancer Genomic Test Standardized Format v1.2.1",
+      "$comment": "Copyright (c) 2020 Section of Genomic Data Management, C-CAT.",
+      "type": "object",
+      "properties": {
+        "metaData": {
+          "$ref": "#/definitions/MetaData"
+        },
+        "testInfo": {
+          "$ref": "#/definitions/TestInfo"
+        },
+        "sequencingSamples": {
+          "title": "Sequencing Samples",
+          "description": "Information on sequencing samples.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/SequencingSample"
+          }
+        },
+        "variants": {
+          "$ref": "#/definitions/Variants"
+        },
+        "otherBiomarkers": {
+          "title": "Other Biomarkers",
+          "description": "Biomarkers other than the variants.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/OtherBiomarker"
+          }
+        },
+        "compositeBiomarkers": {
+          "title": "Composite Biomarkers",
+          "description": "Biomarkers consisting of multiple variants or biomarkers.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/CompositeBiomarker"
+          }
+        },
+        "expressions": {
+          "title": "Expressions",
+          "description": "RNA expressions.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/Expression"
+          }
+        },
+        "nonHumanContents": {
+          "title": "Non-human Contents",
+          "description": "Non-human Contents such as virus.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/NonHumanContent"
+          }
+        }
+      },
+      "required": [
+        "metaData",
+        "testInfo",
+        "sequencingSamples"
+      ],
+      "additionalProperties": false
+    },
+    "MetaData": {
+      "title": "Metadata",
+      "description": "Metadata.",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "title": "Schema Version",
+          "description": "The schema version of the Cancer Genome Test Results Standardized Format.",
+          "type": "string",
+          "pattern": "^[0-9\\.]+$"
+        },
+        "referenceGenome": {
+          "$ref": "#/definitions/ReferenceGenome"
+        },
+        "configOptions": {
+          "$ref": "#/definitions/ConfigOptions"
+        },
+        "comments": {
+          "title": "Comments",
+          "description": "Comments about variants, biomarkers, and samples.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/Comment"
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "referenceGenome"
+      ],
+      "additionalProperties": false
+    },
+    "SequencingSample": {
+      "title": "Sequencing Sample",
+      "description": "Information on a sequencing sample (tumor or normal, and DNA or RNA).",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "title": "Item ID",
+          "description": "ID of the sample. This must be a unique string in a file.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "tumorOrNormal": {
+          "title": "Tumor or Normal",
+          "description": "Specimen type, defined as tumor or normal.",
+          "type": "string",
+          "enum": [
+            "tumor",
+            "normal"
+          ]
+        },
+        "nucleicAcid": {
+          "title": "Nucleic acid",
+          "description": "Nucleic acid.",
+          "type": "string",
+          "enum": [
+            "DNA",
+            "RNA"
+          ]
+        },
+        "totalReadCount": {
+          "title": "Total Read Count",
+          "description": "The total number of reads including unmapped reads.",
+          "type": "integer"
+        },
+        "totalMappedReadCount": {
+          "title": "Total Mapped Read Count",
+          "description": "The total number of mapped reads.",
+          "type": "integer"
+        },
+        "duplicateReadsPercentage": {
+          "title": "Duplicate Reads Percentage",
+          "description": "Percentage of duplicate reads in the total reads.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "mappedReadsPercentage": {
+          "title": "Mapped Reads Percentage",
+          "description": "Percentage of mapped reads in the total reads.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "meanReadDepth": {
+          "title": "Mean Read Depth",
+          "description": "Mean read depth.",
+          "type": "number",
+          "minimum": 1
+        },
+        "medianReadDepth": {
+          "title": "Median Read Depth",
+          "description": "Median read depth.",
+          "type": "number",
+          "minimum": 1
+        },
+        "suspectedSampleStates": {
+          "title": "Suspected Sample States",
+          "description": "Suspected DNA or RNA sample states such as \"contaminated\" and \"deaminated\" (cytosine deamination in FFPE DNA). An empty array denotes the states are not detected.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "contaminated",
+              "deaminated",
+              "fragmentated",
+              "degraded"
+            ]
+          }
+        }
+      },
+      "required": [
+        "itemId",
+        "tumorOrNormal",
+        "nucleicAcid"
+      ],
+      "additionalProperties": false
+    },
+    "ReferenceGenome": {
+      "title": "Reference Genome",
+      "description": "Information on reference genome sequence.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "The release name of the reference genome.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "grcRelease": {
+          "title": "GRC Release",
+          "description": "The GRC (Genome Reference Consortium) release of the reference genome.",
+          "type": "string",
+          "pattern": "^GRC.+$"
+        },
+        "descriptions": {
+          "title": "Descriptions",
+          "description": "Descriptions of the reference genome. One value is assigned per sentence.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        }
+      },
+      "required": [
+        "grcRelease"
+      ],
+      "additionalProperties": false
+    },
+    "ConfigOptions": {
+      "title": "Config Options",
+      "description": "Configuration options for annotation and view.",
+      "type": "object",
+      "properties": {
+        "typeLabelsInterpretedAsKbAmplification": {
+          "title": "Type Labels Interpreted as KB Amplification",
+          "description": "Type labels interpreted as copy number amplification in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "copyNumberAlterationType: amplification",
+              "copyNumberAlterationType: gain",
+              "copyNumberAlterationType: duplication",
+              "rearrangementType: duplication"
+            ]
+          },
+          "default": [
+            "copyNumberAlterationType: amplification",
+            "copyNumberAlterationType: gain",
+            "copyNumberAlterationType: duplication"
+          ]
+        },
+        "typeLabelsInterpretedAsKbLoss": {
+          "title": "Type Labels Interpreted as KB Loss",
+          "description": "Type labels interpreted as copy number loss in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "copyNumberAlterationType: loss",
+              "copyNumberAlterationType: deletion",
+              "copyNumberAlterationType: homozygous deletion",
+              "rearrangementType: deletion",
+              "rearrangementType: exon skipping"
+            ]
+          },
+          "default": [
+            "copyNumberAlterationType: loss",
+            "copyNumberAlterationType: deletion",
+            "copyNumberAlterationType: homozygous deletion"
+          ]
+        },
+        "typeLabelsInterpretedAsKbGeneFusion": {
+          "title": "Type Labels Interpreted as KB Gene Fusion",
+          "description": "Type labels interpreted as gene fusion in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "rearrangementType: gene fusion",
+              "rearrangementType: gene fusion and frameshift variant",
+              "rearrangementType: bidirectional gene fusion",
+              "rearrangementType: other"
+            ]
+          },
+          "default": [
+            "rearrangementType: gene fusion",
+            "rearrangementType: gene fusion and frameshift variant",
+            "rearrangementType: bidirectional gene fusion"
+          ]
+        },
+        "typeLabelsInterpretedAsKbDuplication": {
+          "title": "Type Labels Interpreted as KB Duplication",
+          "description": "Type labels interpreted as Duplication in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "rearrangementType: duplication",
+              "rearrangementType: tandem duplication",
+              "rearrangementType: other",
+              "copyNumberAlterationType: duplication",
+              "copyNumberAlterationType: amplification",
+              "copyNumberAlterationType: gain"
+            ]
+          },
+          "default": [
+            "rearrangementType: duplication",
+            "rearrangementType: tandem duplication"
+          ]
+        },
+        "typeLabelsInterpretedAsKbDeletion": {
+          "title": "Type Labels Interpreted as KB Deletion",
+          "description": "Type labels interpreted as deletion in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "rearrangementType: deletion",
+              "rearrangementType: truncation",
+              "rearrangementType: splice variant",
+              "rearrangementType: exon skipping",
+              "rearrangementType: other",
+              "copyNumberAlterationType: deletion",
+              "copyNumberAlterationType: homozygous deletion",
+              "copyNumberAlterationType: loss"
+            ]
+          },
+          "default": [
+            "rearrangementType: deletion"
+          ]
+        },
+        "typeLabelsInterpretedAsKbInversion": {
+          "title": "Type Labels Interpreted as KB Inversion",
+          "description": "Type labels interpreted as inversion in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "rearrangementType: inversion",
+              "rearrangementType: truncation",
+              "rearrangementType: other"
+            ]
+          },
+          "default": [
+            "rearrangementType: inversion"
+          ]
+        },
+        "typeLabelsInterpretedAsKbTruncation": {
+          "title": "Type Labels Interpreted as KB Truncation",
+          "description": "Type labels interpreted as truncation in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "rearrangementType: truncation",
+              "rearrangementType: deletion",
+              "rearrangementType: inversion",
+              "rearrangementType: other",
+              "copyNumberAlterationType: loss",
+              "copyNumberAlterationType: deletion",
+              "copyNumberAlterationType: homozygous deletion"
+            ]
+          },
+          "default": [
+            "rearrangementType: truncation"
+          ]
+        },
+        "typeLabelsInterpretedAsKbExonSkipping": {
+          "title": "Type Labels Interpreted as KB Exon Skipping",
+          "description": "Type labels interpreted as exon skipping in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "rearrangementType: exon skipping",
+              "rearrangementType: splice variant",
+              "rearrangementType: deletion",
+              "rearrangementType: other"
+            ]
+          },
+          "default": [
+            "rearrangementType: exon skipping"
+          ]
+        },
+        "typeLabelsInterpretedAsKbRearrangement": {
+          "title": "Type Labels Interpreted as KB Rearrangement",
+          "description": "Type labels interpreted as (unclassified) rearrangement in a knowledge base.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "rearrangementType: gene fusion",
+              "rearrangementType: gene fusion and frameshift variant",
+              "rearrangementType: bidirectional gene fusion",
+              "rearrangementType: duplication",
+              "rearrangementType: tandem duplication",
+              "rearrangementType: deletion",
+              "rearrangementType: inversion",
+              "rearrangementType: truncation",
+              "rearrangementType: splice variant",
+              "rearrangementType: exon skipping",
+              "rearrangementType: other",
+              "copyNumberAlterationType: amplification",
+              "copyNumberAlterationType: gain",
+              "copyNumberAlterationType: duplication",
+              "copyNumberAlterationType: loss",
+              "copyNumberAlterationType: deletion",
+              "copyNumberAlterationType: homozygous deletion"
+            ]
+          },
+          "default": [
+            "rearrangementType: other"
+          ]
+        },
+        "hideAlleleFrequency": {
+          "title": "Hiding Allele Frequency",
+          "description": "Hiding allele frequency values.",
+          "type": "boolean",
+          "default": false
+        },
+        "hideCnaValue": {
+          "title": "Hiding CNA Value",
+          "description": "Hiding CNA (copy number alteration) values.",
+          "type": "boolean",
+          "default": false
+        },
+        "hideMsiValue": {
+          "title": "Hiding MSI Value",
+          "description": "Hiding MSI (microsatellite instability) values.",
+          "type": "boolean",
+          "default": false
+        },
+        "hideTmbValue": {
+          "title": "Hiding TMB Value",
+          "description": "Hiding TMB (tumor mutation burden) values.",
+          "type": "boolean",
+          "default": false
+        },
+        "hideLohValue": {
+          "title": "Hiding LOH Value",
+          "description": "Hiding LOH (loss of heterozygosity) values.",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "A Comment about variants, biomarkers, or samples.",
+      "type": "object",
+      "properties": {
+        "itemIds": {
+          "title": "Item IDs",
+          "description": "\"itemID\" values of the items commented on. An empty array denotes the comment is not on specific items, but on the case.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        },
+        "contents": {
+          "title": "Contents",
+          "description": "Notes on the variants. One value is assigned per sentence, and line breaks are ignored.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        }
+      },
+      "required": [
+        "itemIds",
+        "contents"
+      ],
+      "additionalProperties": false
+    },
+    "TestInfo": {
+      "title": "Test Infomation",
+      "description": "Multi-gene test information.",
+      "type": "object",
+      "properties": {
+        "testId": {
+          "title": "Test ID",
+          "description": "Arbitrary test ID assigned by the clinical laboratory service.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "testType": {
+          "title": "Test Type",
+          "description": "The test type defined by DNA or RNA sequencing samples.",
+          "type": "string",
+          "enum": [
+            "tumor-only",
+            "tumor and matched-normal",
+            "tumor-only (cell-free)",
+            "tumor (cell-free) and matched-normal"
+          ]
+        },
+        "targetRegionVersion": {
+          "title": "Target Region Version",
+          "description": "The version of the target region.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "softwareName": {
+          "title": "Software Name",
+          "description": "The name of the analytical software.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "softwareVersion": {
+          "title": "Software Version",
+          "description": "The version of the analytical software.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "panelName": {
+          "title": "Panel Name",
+          "description": "The name of the gene panel.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "panelVersion": {
+          "title": "Panel Version",
+          "description": "The version of the gene panel.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "testForReferenceOnly": {
+          "title": "Test For Reference Only",
+          "description": "Whether or not the test is for reference puropse only.",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "testId",
+        "testType",
+        "panelName",
+        "panelVersion"
+      ],
+      "additionalProperties": false
+    },
+    "Variants": {
+      "title": "Variants",
+      "description": "Information on variants.",
+      "type": "object",
+      "properties": {
+        "shortVariants": {
+          "title": "Short Variants",
+          "description": "Results of SNV (single nucleotide variant), insertion, deletion, and delins.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/ShortVariant"
+          }
+        },
+        "copyNumberAlterations": {
+          "title": "Copy Number Alterations",
+          "description": "Results of copy number alterations.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/CopyNumberAlteration"
+          }
+        },
+        "rearrangements": {
+          "title": "Rearrangements",
+          "description": "Results of rearrangements.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/Rearrangement"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ShortVariant": {
+      "title": "Short Variants",
+      "description": "Short variant including SNV, insertion, deletion, or delins.",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "title": "Item ID",
+          "description": "ID of the variant. This must be a unique string in a file.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "chromosome": {
+          "title": "Chromosome",
+          "description": "The chromosome number.",
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "position": {
+          "title": "Position",
+          "description": "The chromosomal position, with the 1st base having position 1 (1-based).",
+          "type": "integer",
+          "minimum": 1
+        },
+        "referenceAllele": {
+          "title": "Reference Allele",
+          "description": "The reference allele at the position.",
+          "type": "string",
+          "pattern": "^[ACGTN]+$"
+        },
+        "alternateAllele": {
+          "title": "Alternate Allele",
+          "description": "The alternate allele at the position.",
+          "type": "string",
+          "pattern": "^[ACGTN\\*]+$"
+        },
+        "alternateAlleleFrequency": {
+          "title": "Alternate Allele Frequency",
+          "description": "The alternate (variant) allele frequency at the position.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "totalReadDepth": {
+          "title": "Total Read Depth",
+          "description": "The total read depth at the position.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "alternateAlleleReadDepth": {
+          "title": "Alternate Allele Read Depth",
+          "description": "The read depth of the alternate allele.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "variantType": {
+          "title": "Variant Type",
+          "description": "Variant type such as SNV and insertion.",
+          "type": "string",
+          "enum": [
+            "SNV",
+            "insertion",
+            "deletion",
+            "delins",
+            "MNV",
+            "indel"
+          ]
+        },
+        "transcripts": {
+          "title": "Transcripts",
+          "description": "Transcripts on the variant.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/VariantTranscript"
+          }
+        },
+        "sampleItemId": {
+          "title": "Sample Item ID",
+          "description": "The item ID of the samples with the variant.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "variantOrigin": {
+          "title": "Variant Origin",
+          "description": "The origin of the variant.",
+          "type": "string",
+          "enum": [
+            "somatic",
+            "germline",
+            "likely somatic",
+            "likely germline"
+          ]
+        },
+        "matched": {
+          "title": "Matched",
+          "description": "Whether or not the variant is identified using both tumor and matched-normal samples.",
+          "type": "boolean"
+        },
+        "reported": {
+          "title": "Reported",
+          "description": "Whether or not to include the variant in a report.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "itemId",
+        "chromosome",
+        "position",
+        "referenceAllele",
+        "alternateAllele",
+        "alternateAlleleFrequency",
+        "transcripts",
+        "sampleItemId",
+        "reported"
+      ],
+      "additionalProperties": false
+    },
+    "VariantTranscript": {
+      "title": "Variant Transcript",
+      "description": "Transcript of a variant.",
+      "type": "object",
+      "properties": {
+        "transcriptId": {
+          "title": "Transcript ID",
+          "description": "Transcript ID. This is highly recommended to be an ID with the sub-number (e.g., \"NM_000368.4\").",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[^\\s]+$"
+        },
+        "transcriptDatabaseName": {
+          "title": "Transcript Database Name",
+          "description": "The database name of the transcript IDs.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "RefSeq",
+            "Ensembl",
+            null
+          ]
+        },
+        "transcriptDatabaseVersion": {
+          "title": "Transcript Database Version",
+          "description": "The version of the transcript database.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^.+$"
+        },
+        "geneSymbol": {
+          "title": "Gene Symbol",
+          "description": "Gene symbol, as written in a test result report. Null denotes there is no gene in the region.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[^\\s]+$"
+        },
+        "strand": {
+          "title": "Strand",
+          "description": "Strand, defined as + (forward) or - (reverse). Null denotes the strand is not determined.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "+",
+            "-",
+            null
+          ]
+        },
+        "cdsChange": {
+          "title": "CDS Change",
+          "description": "Change at DNA level, as written in a test result report. This is recommended to be notated in HGVS. Null denotes there is no change.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^.+$"
+        },
+        "aminoAcidsChange": {
+          "title": "Amino Acids Change",
+          "description": "Amino acid change, as written in a test result report. This is recommended to be notated in HGVS. Null denotes there is no change.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^.+$"
+        },
+        "calculatedEffects": {
+          "title": "Calculated Effects",
+          "description": "Predicted effects. Each element of the array must be a single term of the Sequence Ontology (http://www.sequenceontology.org/).",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        }
+      },
+      "required": [
+        "transcriptId",
+        "transcriptDatabaseName",
+        "geneSymbol",
+        "cdsChange",
+        "aminoAcidsChange"
+      ],
+      "additionalProperties": false
+    },
+    "CopyNumberAlteration": {
+      "title": "Copy Number Alterations",
+      "description": "Results of copy number alterations.",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "title": "Item ID",
+          "description": "ID of the variant. This must be a unique string in a file.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "chromosome": {
+          "title": "Chromosome",
+          "description": "The chromosome number.",
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "startPosition": {
+          "title": "Start Position",
+          "description": "The start chromosomal position of the alteration, with the 1st base having position 1 (1-based).",
+          "type": "integer",
+          "minimum": 1
+        },
+        "endPosition": {
+          "title": "End Position",
+          "description": "The end chromosomal position of the alteration, with the 1st base having position 1 (1-based).",
+          "type": "integer",
+          "minimum": 1
+        },
+        "copyNumberMetrics": {
+          "title": "Copy Number Metrics",
+          "description": "The values and the units of the copy number alteration.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/CopyNumberMetric"
+          }
+        },
+        "copyNumberAlterationType": {
+          "title": "Copy Number Alteration Type",
+          "description": "Copy number alteration type such as amplification and loss.",
+          "type": "string",
+          "enum": [
+            "amplification",
+            "gain",
+            "duplication",
+            "loss",
+            "deletion",
+            "homozygous deletion",
+            "neutral"
+          ]
+        },
+        "transcripts": {
+          "title": "Transcripts",
+          "description": "Transcripts on the alteration.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/RearrangementTranscript"
+          }
+        },
+        "sampleItemId": {
+          "title": "Sample Item ID",
+          "description": "The item ID of the samples with the variant.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "variantOrigin": {
+          "title": "Variant Origin",
+          "description": "The origin of the variant.",
+          "type": "string",
+          "enum": [
+            "somatic",
+            "germline",
+            "likely somatic",
+            "likely germline"
+          ]
+        },
+        "matched": {
+          "title": "Matched",
+          "description": "Whether or not the variant is identified using both tumor and matched-normal samples.",
+          "type": "boolean"
+        },
+        "reported": {
+          "title": "Reported",
+          "description": "Whether or not to include the variant in a report.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "itemId",
+        "copyNumberAlterationType",
+        "transcripts",
+        "sampleItemId",
+        "reported"
+      ],
+      "additionalProperties": false
+    },
+    "CopyNumberMetric": {
+      "title": "Copy Number Metric",
+      "description": "Metric for copy number alteration.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "description": "The value of the metric",
+          "type": "number"
+        },
+        "unit": {
+          "title": "Unit",
+          "description": "The unit of the metric.",
+          "type": "string",
+          "enum": [
+            "copy number",
+            "fold-change",
+            "log2 fold-change",
+            "fraction-of-gene"
+          ]
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "RearrangementTranscript": {
+      "title": "Rearrangement Transcript",
+      "description": "Transcript of a rearrangement or a copy number alteration.",
+      "type": "object",
+      "properties": {
+        "transcriptId": {
+          "title": "Transcript ID",
+          "description": "Transcript ID. This is highly recommended to be an ID with the sub-number (e.g., \"NM_000368.4\").",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[^\\s]+$"
+        },
+        "transcriptDatabaseName": {
+          "title": "Transcript Database Name",
+          "description": "The database name of the transcript IDs.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "RefSeq",
+            "Ensembl",
+            null
+          ]
+        },
+        "transcriptDatabaseVersion": {
+          "title": "Transcript Database Version",
+          "description": "The version of the transcript database.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^.+$"
+        },
+        "geneSymbol": {
+          "title": "Gene Symbol",
+          "description": "Gene symbol, as written in a test result report. Null denotes there is no gene in the region.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[^\\s]+$"
+        },
+        "strand": {
+          "title": "Strand",
+          "description": "Strand, defined as + (forward) or - (reverse). Null denotes the strand is not determined.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "+",
+            "-",
+            null
+          ]
+        },
+        "cdsChange": {
+          "title": "CDS Change",
+          "description": "Change at DNA level, as written in a test result report. This is recommended to be notated in HGVS. Null denotes there is no change.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^.+$"
+        },
+        "aminoAcidsChange": {
+          "title": "Amino Acids Change",
+          "description": "Amino acid change, as written in a test result report. This is recommended to be notated in HGVS. Null denotes there is no change.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^.+$"
+        },
+        "calculatedEffects": {
+          "title": "Calculated Effects",
+          "description": "Predicted effects. Each element of the array must be a single term of the Sequence Ontology (http://www.sequenceontology.org/).",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        }
+      },
+      "required": [
+        "geneSymbol"
+      ],
+      "additionalProperties": false
+    },
+    "Rearrangement": {
+      "title": "Rearrangement",
+      "description": "Chromosomal rearrangement, structural variation, or splice variant.",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "title": "Item ID",
+          "description": "ID of the variant. This must be a unique string in a file.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "breakends": {
+          "title": "Breakends",
+          "description": "The two breakends of the rearrangement.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/definitions/Breakend"
+          }
+        },
+        "insertedSequence": {
+          "title": "Inserted Sequence",
+          "description": "Inserted sequence between the two breakends on the genome sequence. Null denotes no sequence inserted.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[ACGTN]+$"
+        },
+        "supportingReadCount": {
+          "title": "Supporting Read Count",
+          "description": "The count of the sequencing reads supoorting the rearrangement.",
+          "type": "integer"
+        },
+        "totalReadCount": {
+          "title": "Total Read Count",
+          "description": "The total count of the sequencing reads at the breakends.",
+          "type": "integer"
+        },
+        "alternateAlleleFrequency": {
+          "title": "Alternate Allele Frequency",
+          "description": "The alternate (variant) allele frequency of the rearrangement.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "expressionLevelMetrics": {
+          "title": "Expression Level Metrics",
+          "description": "The values and the units of the expression levels.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/ExpressionLevelMetric"
+          }
+        },
+        "orderedGenePairs": {
+          "title": "Gene Pair Orders",
+          "description": "The transcriptionally ordered pairs of the genes that straddle the breakends. The gene symbols must be included in the transcript objects of the breakends. If this key is absent, the gene pairs are treated without the directional information.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "skippedExonRanges": {
+          "title": "Skipped Exon Ranges",
+          "description": "Skipped exon ranges.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/RegionTranscript"
+          }
+        },
+        "rearrangementNames": {
+          "title": "Rearrangement Names",
+          "description": "The names (short descriptions) of the rearrangement.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        },
+        "rearrangementType": {
+          "title": "Rearrangement Type",
+          "description": "The rearrangement type such as gene fusion and deletion (large deletion).",
+          "type": "string",
+          "enum": [
+            "gene fusion",
+            "gene fusion and frameshift variant",
+            "bidirectional gene fusion",
+            "duplication",
+            "tandem duplication",
+            "deletion",
+            "inversion",
+            "truncation",
+            "splice variant",
+            "exon skipping",
+            "other"
+          ]
+        },
+        "sampleItemId": {
+          "title": "Sample Item ID",
+          "description": "The item ID of the samples with the variant.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "variantOrigin": {
+          "title": "Variant Origin",
+          "description": "The origin of the variant.",
+          "type": "string",
+          "enum": [
+            "somatic",
+            "germline",
+            "likely somatic",
+            "likely germline"
+          ]
+        },
+        "matched": {
+          "title": "Matched",
+          "description": "Whether or not the variant is identified using both tumor and matched-normal samples.",
+          "type": "boolean"
+        },
+        "reported": {
+          "title": "Reported",
+          "description": "Whether or not to include the variant in a report.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "itemId",
+        "breakends",
+        "rearrangementType",
+        "sampleItemId",
+        "reported"
+      ],
+      "additionalProperties": false
+    },
+    "Breakend": {
+      "title": "Breakend",
+      "description": "Rearrangement breakend.",
+      "type": "object",
+      "properties": {
+        "chromosome": {
+          "title": "Chromosome",
+          "description": "The chromosomal number.",
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "startPosition": {
+          "title": "Start Position",
+          "description": "The start chromosomal position of the breakend, with the 1st base having position 1 (1-based).",
+          "type": "integer",
+          "minimum": 1
+        },
+        "endPosition": {
+          "title": "End Position",
+          "description": "The end chromosomal position of the breakend, with the 1st base having position 1 (1-based).",
+          "type": "integer",
+          "minimum": 1
+        },
+        "matePieceLocation": {
+          "title": "Mate Piece Location",
+          "description": "Whether the mate piece is located upstream or downstream of the breakend on the reference sequence (the upstream/downstream are NOT those on a transcript sequence). In the case of a gene fusion or another rearrangement, the value is highly recommended to be specified.",
+          "type": "string",
+          "enum": [
+            "upstream",
+            "downstream"
+          ]
+        },
+        "transcripts": {
+          "title": "Transcripts",
+          "description": "Transcripts at the breakend.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/RearrangementTranscript"
+          }
+        },
+        "supportingReadCount": {
+          "title": "Supporting Read Count",
+          "description": "The count of the sequencing reads supoorting the rearrangement at the breakend.",
+          "type": "integer"
+        },
+        "totalReadCount": {
+          "title": "Total Read Count",
+          "description": "The total count of the sequencing reads at the breakend.",
+          "type": "integer"
+        },
+        "alternateAlleleFrequency": {
+          "title": "Alternate Allele Frequency",
+          "description": "The alternate (variant) allele frequency at the breakend.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "chromosome",
+        "endPosition",
+        "startPosition",
+        "transcripts"
+      ],
+      "additionalProperties": false
+    },
+    "ExpressionLevelMetric": {
+      "title": "Expression Level Metric",
+      "description": "Metric for expression level.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "description": "The value of the metric",
+          "type": "number"
+        },
+        "unit": {
+          "title": "Unit",
+          "description": "The unit of the metric.",
+          "type": "string",
+          "enum": [
+            "TPM",
+            "FPKM",
+            "FPM",
+            "RPKM",
+            "RPM"
+          ]
+        },
+        "statisticType": {
+          "title": "Statistic Type",
+          "description": "Statistic type of the value. Null denotes the value is not a summary statistic.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "mean",
+            "median",
+            "standard deviation",
+            null
+          ],
+          "default": null
+        },
+        "sampleSize": {
+          "title": "Sample Size",
+          "description": "The size of the samples used to calculate the summary statistic.",
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "default": null
+        },
+        "isControl": {
+          "title": "Is Control",
+          "description": "Whether or not the value is from a control group.",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "RegionTranscript": {
+      "title": "Region Transcript",
+      "description": "A region on a transcript.",
+      "type": "object",
+      "properties": {
+        "transcriptId": {
+          "title": "Transcript ID",
+          "description": "Transcript ID. This is highly recommended to be an ID with the sub-number (e.g., \"NM_000368.4\").",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[^\\s]+$"
+        },
+        "transcriptDatabaseName": {
+          "title": "Transcript Database Name",
+          "description": "The database name of the transcript IDs.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "RefSeq",
+            "Ensembl",
+            null
+          ]
+        },
+        "transcriptDatabaseVersion": {
+          "title": "Transcript Database Version",
+          "description": "The version of the transcript database.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^.+$"
+        },
+        "geneSymbol": {
+          "title": "Gene Symbol",
+          "description": "Gene symbol, as written in a test result report. Null denotes there is no gene in the region.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[^\\s]+$"
+        },
+        "strand": {
+          "title": "Strand",
+          "description": "Strand, defined as + (forward) or - (reverse). Null denotes the strand is not determined.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "+",
+            "-",
+            null
+          ]
+        },
+        "exonRange": {
+          "title": "Exon Range",
+          "description": "Start and end numbers of exons. The start and end exons are included in the range.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "required": [
+        "transcriptId",
+        "transcriptDatabaseName",
+        "geneSymbol",
+        "exonRange"
+      ],
+      "additionalProperties": false
+    },
+    "OtherBiomarker": {
+      "title": "Other Biomarker",
+      "description": "Biomarker other than the variants.",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "title": "Item ID",
+          "description": "ID of the biomarker. This must be a unique string in a file.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "biomarkerType": {
+          "title": "Biomarker Type",
+          "description": "Biomarker type such as TMB and MSI.",
+          "type": "string",
+          "enum": [
+            "TMB",
+            "MSI",
+            "LOH"
+          ]
+        },
+        "biomarkerMetrics": {
+          "title": "Biomarker Metrics",
+          "description": "The values and the units of the biomarker.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/BiomarkerMetric"
+          }
+        },
+        "state": {
+          "title": "State",
+          "description": "The state of the biomarker. Null denotes the state is not detected.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "high",
+            "low",
+            "stable",
+            "intermediate",
+            "cannot be determined",
+            null
+          ]
+        },
+        "descriptions": {
+          "title": "Descriptions",
+          "description": "Descriptions of the biomarker.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        },
+        "biomarkerOrigin": {
+          "title": "Biomarker Origin",
+          "description": "The origin of the biomarker.",
+          "type": "string",
+          "enum": [
+            "somatic",
+            "germline",
+            "likely somatic",
+            "likely germline"
+          ]
+        },
+        "sampleItemId": {
+          "title": "Sample Item ID",
+          "description": "The item ID of the samples with the variant.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "matched": {
+          "title": "Matched",
+          "description": "Whether or not the biomarker is identified using both tumor and matched-normal samples.",
+          "type": "boolean"
+        },
+        "reported": {
+          "title": "Reported",
+          "description": "Whether or not to include the biomarker in a report.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "itemId",
+        "biomarkerType",
+        "sampleItemId",
+        "reported"
+      ],
+      "additionalProperties": false
+    },
+    "BiomarkerMetric": {
+      "title": "Biomarker Metric",
+      "description": "Metric for biomarker.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "description": "The value of the metric.",
+          "type": "number"
+        },
+        "unit": {
+          "title": "Unit",
+          "description": "The unit of the metric. Null denotes the metric has no unit.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^.+$"
+        },
+        "metricType": {
+          "title": "Metric Type",
+          "description": "The type of the metric.",
+          "type": "string",
+          "pattern": "^.+$"
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "metricType"
+      ],
+      "additionalProperties": false
+    },
+    "CompositeBiomarker": {
+      "title": "Composite Biomarkers",
+      "description": "Biomarker consisting of multiple variants or biomarkers.",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "title": "Item ID",
+          "description": "ID of the biomarker. This must be a unique string in a file.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "componentItemIds": {
+          "title": "Component Item IDs",
+          "description": "The item IDs of the component variants or biomarkers.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        },
+        "biomarkerNames": {
+          "title": "Biomarker Names",
+          "description": "The names (short descriptions) of the biomarker.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        },
+        "descriptions": {
+          "title": "Descriptions",
+          "description": "The long descriptions of the biomarker.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        },
+        "reported": {
+          "title": "Reported",
+          "description": "Whether or not to include the biomarker in a report.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "itemId",
+        "componentItemIds",
+        "biomarkerNames",
+        "reported"
+      ],
+      "additionalProperties": false
+    },
+    "Expression": {
+      "title": "Expression",
+      "description": "RNA expression.",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "title": "Item ID",
+          "description": "ID of the variant. This must be a unique string in a file.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "transcripts": {
+          "title": "Transcripts",
+          "description": "Transcripts.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/RearrangementTranscript"
+          }
+        },
+        "expressionLevelMetrics": {
+          "title": "Expression Level Metrics",
+          "description": "The values and the units of the expression levels.",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/ExpressionLevelMetric"
+          }
+        },
+        "readCount": {
+          "title": "Read Count",
+          "description": "The count of the reads.",
+          "type": "integer"
+        },
+        "sampleItemId": {
+          "title": "Sample Item ID",
+          "description": "The item ID of the samples with the variant.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "reported": {
+          "title": "Reported",
+          "description": "Whether or not to include the variant in a report.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "itemId",
+        "transcripts",
+        "expressionLevelMetrics",
+        "sampleItemId",
+        "reported"
+      ],
+      "additionalProperties": false
+    },
+    "NonHumanContent": {
+      "title": "Non-human Content",
+      "description": "Non-human Contents such as virus.",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "title": "Item ID",
+          "description": "ID of the biomarker. This must be a unique string in a file.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "organism": {
+          "title": "Organism",
+          "description": "Organism name.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "contentMetrics": {
+          "title": "Content Metrics",
+          "description": "The values and the units of the content.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/BiomarkerMetric"
+          }
+        },
+        "descriptions": {
+          "title": "Descriptions",
+          "description": "Descriptions of the content.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^.+$"
+          }
+        },
+        "sampleItemId": {
+          "title": "Sample Item ID",
+          "description": "The item ID of the samples with the variant.",
+          "type": "string",
+          "pattern": "^.+$"
+        },
+        "reported": {
+          "title": "Reported",
+          "description": "Whether or not to include the content in a report.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "itemId",
+        "organism",
+        "sampleItemId",
+        "reported"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

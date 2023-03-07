@@ -1,0 +1,233 @@
+{
+    "metaData": {
+        "schemaVersion": "1.0",
+        "referenceGenome": {
+            "name": "GRCh37",
+            "patch": "p13"
+        }
+    },
+    "testInfo": {
+        "testId": "1234567890",
+        "testType": "tumor-only",
+        "panelName": "defaultPanel",
+        "panelVersion": "0.1"
+    },
+    "variants": {
+        "shortVariants": [
+            {
+                "itemId": "variant-1",
+                "chromosome": "7",
+                "position": 140501302,
+                "referenceAllele": "TGG",
+                "alternateAllele": "CGA",
+                "alternateAlleleFrequency": 1.0,
+                "totalReadDepth": 157,
+                "alternateAlleleReadDepth": 157,
+                "variantType": "delins",
+                "transcripts": [
+                    {
+                        "transcriptId": "ENST00000646891.1",
+                        "transcriptDatabaseName": "Ensembl",
+                        "transcriptDatabaseVersion": "20211201_exc",
+                        "geneSymbol": "BRAF",
+                        "cdsChange": "c.768_770delinsTCG",
+                        "aminoAcidsChange": "p.Q257R",
+                        "calculatedEffects": [
+                            "missense_variant"
+                        ]
+                    }
+                ],
+                "testMethod": "DNA-seq",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-2",
+                "chromosome": "10",
+                "position": 43609061,
+                "referenceAllele": "A",
+                "alternateAllele": "T",
+                "alternateAlleleFrequency": 1.0,
+                "totalReadDepth": 162,
+                "alternateAlleleReadDepth": 162,
+                "variantType": "SNV",
+                "transcripts": [
+                    {
+                        "transcriptId": "ENST00000355710.8",
+                        "transcriptDatabaseName": "Ensembl",
+                        "transcriptDatabaseVersion": "20211201_exc",
+                        "geneSymbol": "RET",
+                        "cdsChange": "c.1817A>T",
+                        "aminoAcidsChange": "p.Y606F",
+                        "calculatedEffects": [
+                            "missense_variant"
+                        ]
+                    }
+                ],
+                "testMethod": "DNA-seq",
+                "variantOrigin": "germline",
+                "reported": true
+            }
+        ],
+        "copyNumberAlterations": [
+            {
+                "itemId": "variant-3",
+                "chromosome": "10",
+                "startPosition": 123237844,
+                "endPosition": 123357972,
+                "copyNumberMetrics": [
+                    {
+                        "value": 9.65,
+                        "unit": "fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "FGFR2",
+                        "calculatedEffects": [
+                            "copy_number_gain"
+                        ]
+                    }
+                ],
+                "testMethod": "DNA-seq",
+                "variantOrigin": "somatic",
+                "reported": true
+            }
+        ],
+        "rearrangements": [
+            {
+                "itemId": "variant-4",
+                "breakends": [
+                    {
+                        "chromosome": "5",
+                        "startPosition": 149782683,
+                        "endPosition": 149782683,
+                        "matePieceLocation": "upstream",
+                        "transcripts": [
+                            {
+                                "geneSymbol": "CD74",
+                                "calculatedEffects": [
+                                    "gene_fusion"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "2",
+                        "startPosition": 212495319,
+                        "endPosition": 212495319,
+                        "matePieceLocation": "downstream",
+                        "transcripts": [
+                            {
+                                "geneSymbol": "ERBB4",
+                                "calculatedEffects": [
+                                    "gene_fusion"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "genePairs": [
+                    "CD74-ERBB4"
+                ],
+                "supportingReadCount": 113,
+                "alternateAlleleFrequency": 0.7152,
+                "rearrangementNames": [
+                    "CD74|ERBB4 fusion"
+                ],
+                "rearrangementType": "gene fusion",
+                "testMethod": "DNA-seq",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-5",
+                "breakends": [
+                    {
+                        "chromosome": "17",
+                        "startPosition": 7576542,
+                        "endPosition": 7576542,
+                        "matePieceLocation": "upstream",
+                        "transcripts": [
+                            {
+                                "geneSymbol": "TP53",
+                                "calculatedEffects": [
+                                    "tandem_duplication"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "chromosome": "17",
+                        "startPosition": 7578211,
+                        "endPosition": 7578211,
+                        "matePieceLocation": "downstream",
+                        "transcripts": [
+                            {
+                                "geneSymbol": "TP53",
+                                "calculatedEffects": [
+                                    "tandem_duplication"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "supportingReadCount": 245,
+                "alternateAlleleFrequency": 0.6234,
+                "rearrangementNames": [
+                    "TP53 tandem duplication"
+                ],
+                "rearrangementType": "duplication",
+                "testMethod": "DNA-seq",
+                "variantOrigin": "somatic",
+                "reported": true
+            }
+        ]
+    },
+    "otherBiomarkers": [
+        {
+            "itemId": "biomarker-1",
+            "biomarkerType": "TMB",
+            "biomarkerMetrics": [
+                {
+                    "value": 3.9,
+                    "unit": "Muts/Mb"
+                }
+            ],
+            "reported": true
+        },
+        {
+            "itemId": "biomarker-2",
+            "biomarkerType": "MSI",
+            "biomarkerMetrics": [
+                {
+                    "value": 0.0,
+                    "unit": "%"
+                }
+            ],
+            "state": "stable",
+            "reported": true
+        }
+    ],
+    "sequencingSamples": [
+        {
+            "itemId": "sequence-1",
+            "tumorOrNormal": "tumor",
+            "testMethod": "DNA-seq",
+            "duplicateReadsPercentage": 0.51,
+            "mappedReadsPercentage": 19.19,
+            "meanReadDepth": 14.1,
+            "medianReadDepth": 1.0
+        },
+        {
+            "itemId": "sequence-2",
+            "tumorOrNormal": "normal",
+            "testMethod": "DNA-seq",
+            "duplicateReadsPercentage": 0.23,
+            "mappedReadsPercentage": 20.51,
+            "meanReadDepth": 11.9,
+            "medianReadDepth": 1.0
+        }
+    ]
+}

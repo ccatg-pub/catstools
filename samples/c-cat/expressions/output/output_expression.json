@@ -1,0 +1,33 @@
+{
+    "expressions": [
+        {
+            "readCount": 9928,
+            "transcripts": [
+                {
+                    "geneSymbol": "MET"
+                }
+            ],
+            "expressionLevelMetrics": [
+                {
+                    "value": 28.24,
+                    "unit": "TPM",
+                    "isControl": false
+                },
+                {
+                    "value": 142.7,
+                    "unit": "TPM",
+                    "statisticType": "mean",
+                    "sampleSize": 20,
+                    "isControl": true
+                },
+                {
+                    "value": 134.2,
+                    "unit": "TPM",
+                    "statisticType": "standard deviation",
+                    "sampleSize": 20,
+                    "isControl": true
+                }
+            ]
+        }
+    ]
+}

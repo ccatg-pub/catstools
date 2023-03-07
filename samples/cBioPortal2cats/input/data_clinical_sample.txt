@@ -1,0 +1,7 @@
+#Patient Identifier	Sample Identifier	Sample Type	Oncotree Code	Neoplasm Histologic Grade	MGMT Status	IDH1 Mutation	1p/19q Status	Non-silent mutations in TP53, ATRX, CIC, FUBP1	Note	Cancer Type	Cancer Type Detailed	Somatic Status	TMB (nonsynonymous)
+#Identifier to uniquely specify a patient.	A unique sample identifier.	The type of sample (i.e., normal, primary, met, recurrence).	Oncotree Code	Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.	MGMT Status	IDH1 mutation is present	1p/19q Status	Non-silent mutations in TP53, ATRX, CIC, FUBP1	Note.	Cancer Type	Cancer Type Detailed	Somatic Status	TMB (nonsynonymous)
+#STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	NUMBER
+#1	1	9	1	1	1	1	1	1	1	1	1	1	1
+PATIENT_ID	SAMPLE_ID	SAMPLE_TYPE	ONCOTREE_CODE	GRADE	MGMT_STATUS	IDH1_MUTATION	STATUS_1P_19Q	NON_SILENT_MUT_TP53_ATRX_CIC_FUBP1	NOTE	CANCER_TYPE	CANCER_TYPE_DETAILED	SOMATIC_STATUS	TMB_NONSYNONYMOUS	MSI_SENSOR_SCORE
+P01	P01_Pri	Primary	ASTR	II	Unmethylated	R132H	Intact	TP53, ATRX	NA	Glioma	Astrocytoma	Matched	1.3	
+P01	P01_Pri	Primary	ASTR	II	Unknown	R132H	Intact	TP53, ATRX	NA	Glioma	Astrocytoma	Matched		0.533333333333

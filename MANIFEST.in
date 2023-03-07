@@ -1,0 +1,19 @@
+include catstools/*.py
+include catstools/aggregation/*.py
+include catstools/aggregation/circos_plot/*.py
+include catstools/aggregation/gene_analysis_summary/*.py
+include catstools/aggregation/gene_analysis_summary/input_data/*.tsv
+include catstools/aggregation/onco_plot/*.py
+include catstools/cBioPortal/*.py
+include catstools/cBioPortal/vcf2maf/*.pl
+include catstools/cBioPortal/vcf2maf/data/*.tsv
+include catstools/formatupdate/*.py
+graft catstools/reference
+
+include tests/*.py
+include tests/cBioPortal/*.py
+include tests/cBioPortal/*.txt
+include tests/cBioPortal/*.maf
+include tests/formatupdate/*.py
+include tests/header.vcf
+include tests/*.json
