@@ -1,9 +1,10 @@
-# catstools [beta version, under testing]
+# catstools [beta version]
 
 ## 1. Overview
-- This is a beta version under testing.
-- This package provides a toolkit to manipulate files in the [CATS (CAncer genomic Test Standardized) format.](https://www.ncc.go.jp/jp/c_cat/jitsumushya/060/index.html)
-
+- This is a beta version under testing. Comments are welcomed.
+- This package provides a toolkit to manipulate files in the CATS (CAncer genomic Test Standardized) format in [ENG](https://www.ncc.go.jp/en/c_cat/section/070/index.html) and [JPN](https://www.ncc.go.jp/jp/c_cat/jitsumushya/060/index.html).
+- Please call it CATS|TOOLS not CAT|STOOLS.
+- This program comes with ABSOLUTELY NO WARRANTY.
 
 ## 2. Requirement
 - Linux
@@ -150,7 +151,7 @@ Optional arguments:
                         Version of your test
 ```
 [Note]  
-&emsp;&ensp;For details on GRC_RELEASE, TEST_TYPE, PANEL_NAME, PANEL_VERSION, see [CATS format documents.](https://www.ncc.go.jp/jp/c_cat/jitsumushya/060/index.html)
+&emsp;&ensp;For details on GRC_RELEASE, TEST_TYPE, PANEL_NAME, PANEL_VERSION, see CATS format documents in [ENG](https://www.ncc.go.jp/en/c_cat/section/070/index.html) and [JPN](https://www.ncc.go.jp/jp/c_cat/jitsumushya/060/index.html).
 
 #### 4.3.2 [Additional] Conversion to other formats such as vcf and bed formats internally used in C-CAT.
 Convert cats format into a set of formats internally used in C-CAT.  
@@ -286,7 +287,7 @@ Optional arguments:
   
 [Note]  
 - Files with the extension ".cats" among files captured by a glob pattern are considered for aggregation. Those files with the extension must be in CATS format and undergo the update and validation explained in [4.1 Format Update] and [4.2 Validation], respectively.  
-- INPUT_PATTERN argument must be specified in double quotation marks.  
+- INPUT_PATTERN argument must be specified in double quotation marks.  
   
 &emsp;&ensp;e.g.)  
 ```
