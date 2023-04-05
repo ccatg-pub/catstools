@@ -1,12 +1,12 @@
 # catstools [beta version]
 
 ## 1. Overview
-- This is a beta version under testing. Comments are welcomed.
+- This is a beta version under testing. Comments are welcome.
 - This package provides a toolkit to manipulate files in the CATS (CAncer genomic Test Standardized) format in [ENG](https://www.ncc.go.jp/en/c_cat/section/070/index.html) and [JPN](https://www.ncc.go.jp/jp/c_cat/jitsumushya/060/index.html).
-- Please call it CATS|TOOLS not CAT|STOOLS.
+- Please refer to it as CATS|TOOLS and not CAT|STOOLS.
 - This program comes with ABSOLUTELY NO WARRANTY.
 
-## 2. Requirement
+## 2. Requirements
 - Linux
 - Python == 3.6 or 3.7  
   Python libraries:
@@ -23,17 +23,17 @@
 ## 3. Install
 Tools and data are subject to the rights set forth by their respective owners.  
 
-### 3.1 Python package install
+### 3.1 Python package installation
 ```
 pip3 install .
 ```
 
-### 3.2 Download reference genome sequence (GRCh38) 
+### 3.2 Download the reference genome sequence (GRCh38)
 ```
 curl -LR https://api.gdc.cancer.gov/data/254f697d-310d-4d7d-a27b-27fbf767a834 | tar xzvf -
 ```
 
-### 3.3 Download reference genome sequence (GRCh37) 
+### 3.3 Download the reference genome sequence (GRCh37)
 ```
 curl -L -O ftp://ftp.ensembl.org/pub/grch37/current/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz
 gunzip Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz
@@ -67,8 +67,8 @@ mv -i NG-Circos-master/python_script/NGCircos_PrepareData.py /path/to/catstools/
 ## 4. Usage
 
 ### 4.1 Format Update
-Update the schema version of the cats format to a specified version. If not specified, convert to the latest version.  
-This update is made for differences between versions, for example, adding tags and options. [Sample data](./samples/format_update/)
+Update the schema version of the CATS format to a specified version. If not specified, update to the latest version.  
+This update is designed for differences between versions, for example, adding tags and options. [\[Sample data\]](./samples/format_update/)
 ```
 $ catstools format_update -h
 Usage: catstools format_update [-h] --input INPUT --output OUTPUT
@@ -84,9 +84,8 @@ Optional arguments:
 ```
 
 ### 4.2 Validation
-Validate cats format. [Sample data](./samples/validation/)  
-If there are no problems during the validation process, there will be no output.  
-If there is a problem, there is output.  
+Validate the CATS format. [\[Sample data\]](./samples/validation/)  
+If no problems are provided during the validation process, there will be no output.  
 ```
 $ catstools validation -h
 Usage: catstools validation [-h] --input INPUT --fasta-grch38 FASTA_GRCH38
@@ -106,10 +105,10 @@ Optional arguments:
 #### 4.3.1 Conversion to formats supported by cBioPortal
 
 ##### 4.3.1.1 CATS format to cBioPortal formats
-Convert CATS format into a set of files that can be imported into cBioPortal. [Sample data](./samples/cats2cBioPortal/)  
-e.g.)  
-- "shortVariants" tag is converted to data_snv.vcf for variant call and meta_mutations_extended.txt for metadata in cBioPortal.  
-- For other conversions, see [Sample data.](./samples/cats2cBioPortal/)  
+Convert the CATS format into a set of files that can be imported into cBioPortal. [\[Sample data\]](./samples/cats2cBioPortal/)  
+For example:  
+- The "shortVariants" tag is converted to data_snv.vcf for variant call and meta_mutations_extended.txt for metadata in cBioPortal.  
+- For other conversions, see [\[Sample data\]](./samples/cats2cBioPortal/).  
 ```
 $ catstools cats2cBioPortal -h
 Usage: catstools cats2cBioPortal [-h] --input INPUT 
@@ -122,12 +121,12 @@ Optional arguments:
                         Output directory path
 ```
 [Note]  
-&emsp;&ensp;To import short variant data into cBioPortal, the output vcf file needs to be further converted to cBioPortal's maf format.  
-&emsp;&ensp;See below for how to do it.  
+&emsp;&ensp;To import the short variant data into cBioPortal, the output vcf file needs to be further converted to the maf format of cBioPortal.  
+&emsp;&ensp;See below for guidelines:  
 &emsp;&ensp;[Convert vcf to maf (GitHub: mskcc/vcf2maf)](https://github.com/mskcc/vcf2maf)
 
 ##### 4.3.1.2 cBioPortal formats to CATS format
-Convert a set of cBioPortal formats to CATS format. [Sample data](./samples/cBioPortal2cats/)  
+Convert a set of cBioPortal formats to the CATS format. [\[Sample data\]](./samples/cBioPortal2cats/)  
 ```
 $ catstools cBioPortal2cats -h
 Usage: catstools cBioPortal2cats [-h] --input-dir INPUT_DIR 
@@ -151,15 +150,15 @@ Optional arguments:
                         Version of your test
 ```
 [Note]  
-&emsp;&ensp;For details on GRC_RELEASE, TEST_TYPE, PANEL_NAME, PANEL_VERSION, see CATS format documents in [ENG](https://www.ncc.go.jp/en/c_cat/section/070/index.html) and [JPN](https://www.ncc.go.jp/jp/c_cat/jitsumushya/060/index.html).
+&emsp;&ensp;For details on GRC_RELEASE, TEST_TYPE, PANEL_NAME, and PANEL_VERSION, see the CATS format documents in [ENG](https://www.ncc.go.jp/en/c_cat/section/070/index.html) and [JPN](https://www.ncc.go.jp/jp/c_cat/jitsumushya/060/index.html).
 
-#### 4.3.2 [Additional] Conversion to other formats such as vcf and bed formats internally used in C-CAT.
-Convert cats format into a set of formats internally used in C-CAT.  
-&emsp; * Data in cats format are automatically converted into data based on GRCh38 in the other formats.
+#### 4.3.2 [Additional] Conversion to other formats, such as vcf and bed formats, internally used in C-CAT
+Convert the CATS format into a set of formats internally used in C-CAT.  
+&emsp; * Data in the CATS format are automatically converted into data based on GRCh38 in the other formats.
 
-##### 4.3.2.1  Short variants
-Convert "shortVariants" tag to the vcf format. [Sample data](./samples/c-cat/short_variants/)  
-&emsp; * The header and INFO column in this vcf are different from those in vcf for cBioPortal.
+##### 4.3.2.1 Short variants
+Convert the "shortVariants" tag to the vcf format. [\[Sample data\]](./samples/c-cat/short_variants/)  
+&emsp; * The header and INFO column in this vcf are different from those in the vcf for cBioPortal.
 ```
 $ catstools short_variants -h
 Usage: catstools short_variants [-h] --input INPUT (--somatic | --germline)
@@ -180,8 +179,8 @@ Optional arguments:
                         Output reference map file
 ```
 [Note]  
-&emsp;&ensp;The reference map file is internally used in C-CAT to associate itemIds in cats format with alterations in the converted other formats.  
-&emsp;&ensp;e.g.)  
+&emsp;&ensp;The reference map file is internally used in C-CAT to associate itemIds in the CATS format with alterations in the other converted formats.  
+&emsp;&ensp;For example:  
 ```
   {
     "DNA_somatic_2_32508081_C_T": "itemId-1",
@@ -190,7 +189,7 @@ Optional arguments:
 ```
 
 ##### 4.3.2.2 Copy number alterations
-Convert "copyNumberAlterations" tag to bed format. [Sample data](./samples/c-cat/copy_number_alterations/)  
+Convert the "copyNumberAlterations" tag to bed format. [\[Sample data\]](./samples/c-cat/copy_number_alterations/)  
 ```
 $ catstools copy_number_alterations -h
 Usage: catstools copy_number_alterations [-h] --input INPUT 
@@ -206,10 +205,10 @@ Optional arguments:
                         Output reference map file
 ```
 [Note]  
-&emsp;&ensp;For the reference map file, see 4.3.2.1 Short variants [Note] description.  
+&emsp;&ensp;For the reference map file, see [4.3.2.1 Short variants](#4321-short-variants) [Note] description.  
 
 ##### 4.3.2.3 Rearrangements
-Convert "rearrangements" tag to bedpe and json formats. [Sample data](./samples/c-cat/rearrangements/)  
+Convert the "rearrangements" tag to the bedpe and json formats. [\[Sample data\]](./samples/c-cat/rearrangements/)  
 - The bedpe format is used for fusions.  
 - The json format is used for other rearrangements.  
 ```
@@ -232,10 +231,10 @@ Optional arguments:
                         Output reference map file
 ```
 [Note]  
-&emsp;&ensp;For the reference map file, see 4.3.2.1 Short variants [Note] description.  
+&emsp;&ensp;For the reference map file, see [4.3.2.1 Short variants](#4321-short-variants) [Note] description.  
 
 ##### 4.3.2.4 Gene expressions
-Convert "expressions" tag to json format. [Sample data](./samples/c-cat/expressions/)  
+Convert the "expressions" tag to the json format. [\[Sample data\]](./samples/c-cat/expressions/)  
 ```
 $ catstools expressions -h
 Usage: catstools expressions [-h] --input INPUT 
@@ -249,7 +248,7 @@ Optional arguments:
 ```
 
 ##### 4.3.2.5 Other biomarkers
-Convert "otherBiomarkers" tag to json format. [Sample data](./samples/c-cat/other_biomarkers/)  
+Convert the "otherBiomarkers" tag to the json format. [\[Sample data\]](./samples/c-cat/other_biomarkers/)  
 ```
 $ catstools other_biomarkers -h
 Usage: catstools other_biomarkers [-h] --input INPUT 
@@ -263,7 +262,7 @@ Optional arguments:
 ```
 
 ### 4.4 Aggregation
-Draw a graph based on cats format. [Sample data](./samples/aggregation/)  
+Draw a graph based on the CATS format. [\[Sample data\]](./samples/aggregation/)  
 ```
 $ catstools aggregation -h
 Usage: catstools aggregation [-h] --mode MODE
@@ -286,10 +285,10 @@ Optional arguments:
 ```
   
 [Note]  
-- Files with the extension ".cats" among files captured by a glob pattern are considered for aggregation. Those files with the extension must be in CATS format and undergo the update and validation explained in [4.1 Format Update] and [4.2 Validation], respectively.  
+- Files with the extension ".cats" among files captured using a glob pattern are considered for aggregation. Those files with the extension must be in the CATS format and undergo the update and validation explained in [4.1 Format Update](#41-format-update) and [4.2 Validation](#42-validation), respectively.  
 - INPUT_PATTERN argument must be specified in double quotation marks.  
   
-&emsp;&ensp;e.g.)  
+&emsp;&ensp;For example:  
 ```
   catstools aggregation --mode 1
                         --input-pattern "/path/to/input_file/**/*.cats"
