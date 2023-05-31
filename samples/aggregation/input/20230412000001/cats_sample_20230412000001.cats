@@ -1914,12 +1914,12 @@
             "biomarkerType": "TMB",
             "biomarkerMetrics": [
                 {
-                    "value": 2.52,
+                    "value": 113.01,
                     "unit": "mutations-per-megabase",
                     "metricType": "mutations-per-megabase"
                 }
             ],
-            "state": "low",
+            "state": "high",
             "sampleItemId": "sequence-1-tumor-dna",
             "reported": true
         }

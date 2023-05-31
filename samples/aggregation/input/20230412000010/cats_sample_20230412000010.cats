@@ -22,21 +22,21 @@
         "shortVariants": [
             {
                 "itemId": "variant-1",
-                "chromosome": "9",
-                "position": 5465529,
+                "chromosome": "1",
+                "position": 78428511,
                 "referenceAllele": "G",
                 "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.1864,
-                "totalReadDepth": 774,
+                "alternateAlleleFrequency": 0.1077,
+                "totalReadDepth": 929,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002590",
+                        "transcriptId": "NM_002745",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "CD274",
-                        "strand": "+",
-                        "cdsChange": "713G>A",
-                        "aminoAcidsChange": "R238K"
+                        "geneSymbol": "FUBP1",
+                        "strand": "-",
+                        "cdsChange": "1288C>T",
+                        "aminoAcidsChange": "R430C"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -45,21 +45,21 @@
             },
             {
                 "itemId": "variant-2",
-                "chromosome": "2",
-                "position": 48030646,
-                "referenceAllele": "CC",
-                "alternateAllele": "C",
-                "alternateAlleleFrequency": 0.1674,
-                "totalReadDepth": 775,
+                "chromosome": "16",
+                "position": 67671660,
+                "referenceAllele": "AA",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.1839,
+                "totalReadDepth": 930,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002591",
+                        "transcriptId": "NM_002746",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "MSH6",
+                        "geneSymbol": "CTCF",
                         "strand": "+",
-                        "cdsChange": "3261delC",
-                        "aminoAcidsChange": "F1088fs*2"
+                        "cdsChange": "1086delA",
+                        "aminoAcidsChange": "E363fs*30"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -68,21 +68,21 @@
             },
             {
                 "itemId": "variant-3",
-                "chromosome": "19",
-                "position": 41762430,
-                "referenceAllele": "C",
-                "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.1613,
-                "totalReadDepth": 776,
+                "chromosome": "15",
+                "position": 90628118,
+                "referenceAllele": "CCTT",
+                "alternateAllele": "C",
+                "alternateAlleleFrequency": 0.1524,
+                "totalReadDepth": 931,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002592",
+                        "transcriptId": "NM_002747",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "AXL",
-                        "strand": "+",
-                        "cdsChange": "2083C>T",
-                        "aminoAcidsChange": "R695C"
+                        "geneSymbol": "IDH2",
+                        "strand": "-",
+                        "cdsChange": "1198_1200delAAG",
+                        "aminoAcidsChange": "K400del"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -91,21 +91,21 @@
             },
             {
                 "itemId": "variant-4",
-                "chromosome": "19",
-                "position": 1223125,
-                "referenceAllele": "C",
-                "alternateAllele": "G",
-                "alternateAlleleFrequency": 0.4674,
-                "totalReadDepth": 777,
+                "chromosome": "10",
+                "position": 104263979,
+                "referenceAllele": "CC",
+                "alternateAllele": "C",
+                "alternateAlleleFrequency": 0.1538,
+                "totalReadDepth": 932,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002593",
+                        "transcriptId": "NM_002748",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "STK11",
+                        "geneSymbol": "SUFU",
                         "strand": "+",
-                        "cdsChange": "1062C>G",
-                        "aminoAcidsChange": "F354L"
+                        "cdsChange": "71delC",
+                        "aminoAcidsChange": "P24fs*72"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -114,21 +114,21 @@
             },
             {
                 "itemId": "variant-5",
-                "chromosome": "14",
-                "position": 69061320,
+                "chromosome": "3",
+                "position": 52643942,
                 "referenceAllele": "A",
-                "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.499,
-                "totalReadDepth": 778,
+                "alternateAllele": "AT",
+                "alternateAlleleFrequency": 0.2942,
+                "totalReadDepth": 933,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002594",
+                        "transcriptId": "NM_002749",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "RAD51B",
-                        "strand": "+",
-                        "cdsChange": "1155A>T",
-                        "aminoAcidsChange": "*385Yext*65"
+                        "geneSymbol": "PBRM1",
+                        "strand": "-",
+                        "cdsChange": "1953_1954insA",
+                        "aminoAcidsChange": "S652fs*13"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -137,21 +137,21 @@
             },
             {
                 "itemId": "variant-6",
-                "chromosome": "2",
-                "position": 215593542,
-                "referenceAllele": "C",
+                "chromosome": "3",
+                "position": 12645688,
+                "referenceAllele": "G",
                 "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.4417,
-                "totalReadDepth": 779,
+                "alternateAlleleFrequency": 0.0109,
+                "totalReadDepth": 934,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002595",
+                        "transcriptId": "NM_002750",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "BARD1",
-                        "strand": "+",
-                        "cdsChange": "2192C>A",
-                        "aminoAcidsChange": "R731H"
+                        "geneSymbol": "RAF1",
+                        "strand": "-",
+                        "cdsChange": "781C>T",
+                        "aminoAcidsChange": "P261S"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -160,21 +160,21 @@
             },
             {
                 "itemId": "variant-7",
-                "chromosome": "7",
-                "position": 81392087,
-                "referenceAllele": "C",
-                "alternateAllele": "CA",
-                "alternateAlleleFrequency": 0.4402,
-                "totalReadDepth": 780,
+                "chromosome": "16",
+                "position": 14038684,
+                "referenceAllele": "G",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.5191,
+                "totalReadDepth": 935,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002596",
+                        "transcriptId": "NM_002751",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "HGF",
+                        "geneSymbol": "ERCC4",
                         "strand": "+",
-                        "cdsChange": "189_190insA",
-                        "aminoAcidsChange": "V64fs*9"
+                        "cdsChange": "2009G>A",
+                        "aminoAcidsChange": "R670Q"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -183,21 +183,21 @@
             },
             {
                 "itemId": "variant-8",
-                "chromosome": "3",
-                "position": 183225953,
-                "referenceAllele": "G",
-                "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.4872,
-                "totalReadDepth": 781,
+                "chromosome": "5",
+                "position": 112164607,
+                "referenceAllele": "AA",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.4709,
+                "totalReadDepth": 936,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002597",
+                        "transcriptId": "NM_002752",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "KLHL6",
+                        "geneSymbol": "APC",
                         "strand": "+",
-                        "cdsChange": "803G>T",
-                        "aminoAcidsChange": "P268L"
+                        "cdsChange": "1682delA",
+                        "aminoAcidsChange": "K561fs*9"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -206,21 +206,21 @@
             },
             {
                 "itemId": "variant-9",
-                "chromosome": "16",
-                "position": 89828379,
-                "referenceAllele": "C",
-                "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.3698,
-                "totalReadDepth": 782,
+                "chromosome": "10",
+                "position": 123246935,
+                "referenceAllele": "G",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.3119,
+                "totalReadDepth": 937,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002598",
+                        "transcriptId": "NM_002753",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "FANCA",
-                        "strand": "+",
-                        "cdsChange": "2830C>T",
-                        "aminoAcidsChange": "D944Y"
+                        "geneSymbol": "FGFR2",
+                        "strand": "-",
+                        "cdsChange": "1990C>T",
+                        "aminoAcidsChange": "R664W"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -229,21 +229,21 @@
             },
             {
                 "itemId": "variant-10",
-                "chromosome": "16",
-                "position": 68835596,
+                "chromosome": "12",
+                "position": 121432125,
                 "referenceAllele": "C",
-                "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.1369,
-                "totalReadDepth": 783,
+                "alternateAllele": "CC",
+                "alternateAlleleFrequency": 0.3713,
+                "totalReadDepth": 938,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002599",
+                        "transcriptId": "NM_002754",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "CDH1",
+                        "geneSymbol": "HNF1A",
                         "strand": "+",
-                        "cdsChange": "187C>T",
-                        "aminoAcidsChange": "R63*"
+                        "cdsChange": "872_873insC",
+                        "aminoAcidsChange": "G292fs*25"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -252,21 +252,21 @@
             },
             {
                 "itemId": "variant-11",
-                "chromosome": "1",
-                "position": 45797760,
-                "referenceAllele": "T",
-                "alternateAllele": "G",
-                "alternateAlleleFrequency": 0.5192,
-                "totalReadDepth": 784,
+                "chromosome": "2",
+                "position": 48027682,
+                "referenceAllele": "AAGA",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.0669,
+                "totalReadDepth": 939,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002600",
+                        "transcriptId": "NM_002755",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "MUTYH",
+                        "geneSymbol": "MSH6",
                         "strand": "+",
-                        "cdsChange": "892-2T>G",
-                        "aminoAcidsChange": "splice site 892-2A>G"
+                        "cdsChange": "2561_2563delAGA",
+                        "aminoAcidsChange": "K854del"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -275,21 +275,21 @@
             },
             {
                 "itemId": "variant-12",
-                "chromosome": "19",
-                "position": 40761149,
-                "referenceAllele": "G",
-                "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.083,
-                "totalReadDepth": 785,
+                "chromosome": "3",
+                "position": 142274739,
+                "referenceAllele": "AT",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.1263,
+                "totalReadDepth": 940,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002601",
+                        "transcriptId": "NM_002756",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "AKT2",
-                        "strand": "+",
-                        "cdsChange": "203G>T",
-                        "aminoAcidsChange": "P68L"
+                        "geneSymbol": "ATR",
+                        "strand": "-",
+                        "cdsChange": "2320delA",
+                        "aminoAcidsChange": "I774fs*5"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -298,21 +298,21 @@
             },
             {
                 "itemId": "variant-13",
-                "chromosome": "6",
-                "position": 163899926,
-                "referenceAllele": "AA",
-                "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.0927,
-                "totalReadDepth": 786,
+                "chromosome": "10",
+                "position": 89717775,
+                "referenceAllele": "A",
+                "alternateAllele": "AA",
+                "alternateAlleleFrequency": 0.1201,
+                "totalReadDepth": 941,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002602",
+                        "transcriptId": "NM_002757",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "QKI",
+                        "geneSymbol": "PTEN",
                         "strand": "+",
-                        "cdsChange": "401delA",
-                        "aminoAcidsChange": "K134fs*14"
+                        "cdsChange": "800_801insA",
+                        "aminoAcidsChange": "D268fs*30"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -321,21 +321,21 @@
             },
             {
                 "itemId": "variant-14",
-                "chromosome": "19",
-                "position": 50902173,
-                "referenceAllele": "T",
-                "alternateAllele": "G",
-                "alternateAlleleFrequency": 0.1009,
-                "totalReadDepth": 787,
+                "chromosome": "17",
+                "position": 56435885,
+                "referenceAllele": "G",
+                "alternateAllele": "C",
+                "alternateAlleleFrequency": 0.1402,
+                "totalReadDepth": 942,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002603",
+                        "transcriptId": "NM_002758",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "POLD1",
-                        "strand": "+",
-                        "cdsChange": "65T>G",
-                        "aminoAcidsChange": "L22R"
+                        "geneSymbol": "RNF43",
+                        "strand": "-",
+                        "cdsChange": "1252C>G",
+                        "aminoAcidsChange": "L418V"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -344,21 +344,21 @@
             },
             {
                 "itemId": "variant-15",
-                "chromosome": "16",
-                "position": 68863620,
+                "chromosome": "11",
+                "position": 119149251,
                 "referenceAllele": "G",
                 "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.1228,
-                "totalReadDepth": 788,
+                "alternateAlleleFrequency": 0.1412,
+                "totalReadDepth": 943,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002604",
+                        "transcriptId": "NM_002759",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "CDH1",
+                        "geneSymbol": "CBL",
                         "strand": "+",
-                        "cdsChange": "2359G>A",
-                        "aminoAcidsChange": "V787I"
+                        "cdsChange": "1259G>A",
+                        "aminoAcidsChange": "R420Q"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -367,21 +367,21 @@
             },
             {
                 "itemId": "variant-16",
-                "chromosome": "12",
-                "position": 133219486,
-                "referenceAllele": "TG",
-                "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.1305,
-                "totalReadDepth": 789,
+                "chromosome": "4",
+                "position": 55948174,
+                "referenceAllele": "G",
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.1661,
+                "totalReadDepth": 944,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002605",
+                        "transcriptId": "NM_002760",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "POLE",
+                        "geneSymbol": "KDR",
                         "strand": "-",
-                        "cdsChange": "4647delC",
-                        "aminoAcidsChange": "K1550fs*12"
+                        "cdsChange": "3797C>T",
+                        "aminoAcidsChange": "S1266L"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -391,20 +391,20 @@
             {
                 "itemId": "variant-17",
                 "chromosome": "19",
-                "position": 11121091,
-                "referenceAllele": "G",
-                "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.1377,
-                "totalReadDepth": 790,
+                "position": 15376247,
+                "referenceAllele": "T",
+                "alternateAllele": "TG",
+                "alternateAlleleFrequency": 0.213,
+                "totalReadDepth": 945,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002606",
+                        "transcriptId": "NM_002761",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "SMARCA4",
-                        "strand": "+",
-                        "cdsChange": "2158G>A",
-                        "aminoAcidsChange": "V720M"
+                        "geneSymbol": "BRD4",
+                        "strand": "-",
+                        "cdsChange": "766_767insC",
+                        "aminoAcidsChange": "Q256fs*46"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -413,21 +413,21 @@
             },
             {
                 "itemId": "variant-18",
-                "chromosome": "12",
-                "position": 416952,
-                "referenceAllele": "CT",
-                "alternateAllele": "C",
-                "alternateAlleleFrequency": 0.165,
-                "totalReadDepth": 791,
+                "chromosome": "14",
+                "position": 20825592,
+                "referenceAllele": "A",
+                "alternateAllele": "G",
+                "alternateAlleleFrequency": 0.4718,
+                "totalReadDepth": 946,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002607",
+                        "transcriptId": "NM_002762",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "KDM5A",
-                        "strand": "-",
-                        "cdsChange": "3597delA",
-                        "aminoAcidsChange": "G1200fs*9"
+                        "geneSymbol": "PARP2",
+                        "strand": "+",
+                        "cdsChange": "1505A>G",
+                        "aminoAcidsChange": "N502S"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -436,21 +436,21 @@
             },
             {
                 "itemId": "variant-19",
-                "chromosome": "X",
-                "position": 47430409,
-                "referenceAllele": "C",
+                "chromosome": "17",
+                "position": 56435160,
+                "referenceAllele": "AC",
                 "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.3131,
-                "totalReadDepth": 792,
+                "alternateAlleleFrequency": 0.1526,
+                "totalReadDepth": 947,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002608",
+                        "transcriptId": "NM_002763",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "ARAF",
-                        "strand": "+",
-                        "cdsChange": "1684C>A",
-                        "aminoAcidsChange": "Q562K"
+                        "geneSymbol": "RNF43",
+                        "strand": "-",
+                        "cdsChange": "1976delG",
+                        "aminoAcidsChange": "G659fs*41"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -459,21 +459,21 @@
             },
             {
                 "itemId": "variant-20",
-                "chromosome": "7",
-                "position": 2968322,
-                "referenceAllele": "CG",
-                "alternateAllele": "C",
-                "alternateAlleleFrequency": 0.2019,
-                "totalReadDepth": 793,
+                "chromosome": "3",
+                "position": 119642321,
+                "referenceAllele": "C",
+                "alternateAllele": "T",
+                "alternateAlleleFrequency": 0.4781,
+                "totalReadDepth": 948,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002609",
+                        "transcriptId": "NM_002764",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "CARD11",
+                        "geneSymbol": "GSK3B",
                         "strand": "-",
-                        "cdsChange": "1663delC",
-                        "aminoAcidsChange": "R555fs*45"
+                        "cdsChange": "376G>A",
+                        "aminoAcidsChange": "V126I"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -482,21 +482,21 @@
             },
             {
                 "itemId": "variant-21",
-                "chromosome": "X",
-                "position": 1585063,
+                "chromosome": "11",
+                "position": 108141831,
                 "referenceAllele": "C",
-                "alternateAllele": "G",
-                "alternateAlleleFrequency": 0.3365,
-                "totalReadDepth": 794,
+                "alternateAllele": "A",
+                "alternateAlleleFrequency": 0.4931,
+                "totalReadDepth": 949,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002610",
+                        "transcriptId": "NM_002765",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "P2RY8",
-                        "strand": "-",
-                        "cdsChange": "389G>C",
-                        "aminoAcidsChange": "S130T"
+                        "geneSymbol": "ATM",
+                        "strand": "+",
+                        "cdsChange": "2879C>A",
+                        "aminoAcidsChange": "P960H"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -505,21 +505,21 @@
             },
             {
                 "itemId": "variant-22",
-                "chromosome": "2",
-                "position": 47705515,
+                "chromosome": "12",
+                "position": 15668535,
                 "referenceAllele": "C",
                 "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.1366,
-                "totalReadDepth": 795,
+                "alternateAlleleFrequency": 0.0975,
+                "totalReadDepth": 950,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002611",
+                        "transcriptId": "NM_002766",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "MSH2",
+                        "geneSymbol": "PTPRO",
                         "strand": "+",
-                        "cdsChange": "2315C>T",
-                        "aminoAcidsChange": "T772I"
+                        "cdsChange": "1568C>T",
+                        "aminoAcidsChange": "P523L"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -528,21 +528,21 @@
             },
             {
                 "itemId": "variant-23",
-                "chromosome": "22",
-                "position": 41527412,
+                "chromosome": "9",
+                "position": 135772927,
                 "referenceAllele": "G",
-                "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.1254,
-                "totalReadDepth": 796,
+                "alternateAllele": "C",
+                "alternateAlleleFrequency": 0.726,
+                "totalReadDepth": 951,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002612",
+                        "transcriptId": "NM_002767",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "EP300",
-                        "strand": "+",
-                        "cdsChange": "1303G>A",
-                        "aminoAcidsChange": "V435I"
+                        "geneSymbol": "TSC1",
+                        "strand": "-",
+                        "cdsChange": "2696C>G",
+                        "aminoAcidsChange": "T899S"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -551,21 +551,21 @@
             },
             {
                 "itemId": "variant-24",
-                "chromosome": "4",
-                "position": 143159104,
+                "chromosome": "9",
+                "position": 135779171,
                 "referenceAllele": "C",
                 "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.0325,
-                "totalReadDepth": 797,
+                "alternateAlleleFrequency": 0.0847,
+                "totalReadDepth": 952,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002613",
+                        "transcriptId": "NM_002768",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "INPP4B",
+                        "geneSymbol": "TSC1",
                         "strand": "-",
-                        "cdsChange": "749G>A",
-                        "aminoAcidsChange": "R250Q"
+                        "cdsChange": "2075G>A",
+                        "aminoAcidsChange": "R692Q"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -574,21 +574,21 @@
             },
             {
                 "itemId": "variant-25",
-                "chromosome": "2",
-                "position": 215593516,
-                "referenceAllele": "C",
+                "chromosome": "17",
+                "position": 59938839,
+                "referenceAllele": "G",
                 "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.1665,
-                "totalReadDepth": 798,
+                "alternateAlleleFrequency": 0.1219,
+                "totalReadDepth": 953,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002614",
+                        "transcriptId": "NM_002769",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "BARD1",
+                        "geneSymbol": "BRIP1",
                         "strand": "-",
-                        "cdsChange": "2218G>T",
-                        "aminoAcidsChange": "E740*"
+                        "cdsChange": "62C>T",
+                        "aminoAcidsChange": "A21V"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -597,113 +597,21 @@
             },
             {
                 "itemId": "variant-26",
-                "chromosome": "5",
-                "position": 67589158,
-                "referenceAllele": "AATA",
-                "alternateAllele": "A",
-                "alternateAlleleFrequency": 0.8476,
-                "totalReadDepth": 799,
-                "transcripts": [
-                    {
-                        "transcriptId": "NM_002615",
-                        "transcriptDatabaseName": "RefSeq",
-                        "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "PIK3R1",
-                        "strand": "+",
-                        "cdsChange": "1147_1149delATA",
-                        "aminoAcidsChange": "I383del"
-                    }
-                ],
-                "sampleItemId": "sequence-1-tumor-dna",
-                "variantOrigin": "somatic",
-                "reported": true
-            },
-            {
-                "itemId": "variant-27",
-                "chromosome": "7",
-                "position": 116397534,
-                "referenceAllele": "A",
-                "alternateAllele": "G",
-                "alternateAlleleFrequency": 0.4955,
-                "totalReadDepth": 800,
-                "transcripts": [
-                    {
-                        "transcriptId": "NM_002616",
-                        "transcriptDatabaseName": "RefSeq",
-                        "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "MET",
-                        "strand": "+",
-                        "cdsChange": "1906A>G",
-                        "aminoAcidsChange": "M636V"
-                    }
-                ],
-                "sampleItemId": "sequence-1-tumor-dna",
-                "variantOrigin": "somatic",
-                "reported": true
-            },
-            {
-                "itemId": "variant-28",
                 "chromosome": "17",
-                "position": 7578449,
-                "referenceAllele": "C",
-                "alternateAllele": "T",
-                "alternateAlleleFrequency": 0.1979,
-                "totalReadDepth": 801,
+                "position": 56448297,
+                "referenceAllele": "CG",
+                "alternateAllele": "C",
+                "alternateAlleleFrequency": 0.2814,
+                "totalReadDepth": 954,
                 "transcripts": [
                     {
-                        "transcriptId": "NM_002617",
+                        "transcriptId": "NM_002770",
                         "transcriptDatabaseName": "RefSeq",
                         "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "TP53",
+                        "geneSymbol": "RNF43",
                         "strand": "-",
-                        "cdsChange": "481G>A",
-                        "aminoAcidsChange": "A161T"
-                    }
-                ],
-                "sampleItemId": "sequence-1-tumor-dna",
-                "variantOrigin": "somatic",
-                "reported": true
-            },
-            {
-                "itemId": "variant-29",
-                "chromosome": "X",
-                "position": 44938456,
-                "referenceAllele": "A",
-                "alternateAllele": "G",
-                "alternateAlleleFrequency": 0.4267,
-                "totalReadDepth": 802,
-                "transcripts": [
-                    {
-                        "transcriptId": "NM_002618",
-                        "transcriptDatabaseName": "RefSeq",
-                        "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "KDM6A",
-                        "strand": "+",
-                        "cdsChange": "3004A>G",
-                        "aminoAcidsChange": "T1002A"
-                    }
-                ],
-                "sampleItemId": "sequence-1-tumor-dna",
-                "variantOrigin": "somatic",
-                "reported": true
-            },
-            {
-                "itemId": "variant-30",
-                "chromosome": "1",
-                "position": 65306996,
-                "referenceAllele": "GT",
-                "alternateAllele": "G",
-                "alternateAlleleFrequency": 0.2595,
-                "totalReadDepth": 803,
-                "transcripts": [
-                    {
-                        "transcriptId": "NM_002619",
-                        "transcriptDatabaseName": "RefSeq",
-                        "transcriptDatabaseVersion": "version",
-                        "geneSymbol": "JAK1",
-                        "strand": "-",
-                        "cdsChange": "2580delA",
-                        "aminoAcidsChange": "K860fs*16"
+                        "cdsChange": "349delC",
+                        "aminoAcidsChange": "R117fs*41"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -713,24 +621,124 @@
         ],
         "copyNumberAlterations": [
             {
-                "itemId": "variant-31",
-                "chromosome": "9",
-                "startPosition": 21853212,
-                "endPosition": 21998002,
+                "itemId": "variant-27",
+                "chromosome": "1",
+                "startPosition": 8073269,
+                "endPosition": 8075681,
                 "copyNumberMetrics": [
                     {
                         "value": 0.0,
                         "unit": "absolute copy number"
                     },
                     {
-                        "value": 0.67,
+                        "value": 0.09,
                         "unit": "fold-change"
                     }
                 ],
                 "copyNumberAlterationType": "loss",
                 "transcripts": [
                     {
-                        "geneSymbol": "CDKN2A"
+                        "geneSymbol": "ERRFI1"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-28",
+                "chromosome": "1",
+                "startPosition": 120457928,
+                "endPosition": 120612048,
+                "copyNumberMetrics": [
+                    {
+                        "value": 0.0,
+                        "unit": "absolute copy number"
+                    },
+                    {
+                        "value": 5.58,
+                        "unit": "fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "NOTCH2"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-29",
+                "chromosome": "7",
+                "startPosition": 92205279,
+                "endPosition": 92504369,
+                "copyNumberMetrics": [
+                    {
+                        "value": 0.0,
+                        "unit": "absolute copy number"
+                    },
+                    {
+                        "value": 2.57,
+                        "unit": "fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "CDK6"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-30",
+                "chromosome": "3",
+                "startPosition": 185003347,
+                "endPosition": 185200258,
+                "copyNumberMetrics": [
+                    {
+                        "value": 0.0,
+                        "unit": "absolute copy number"
+                    },
+                    {
+                        "value": 1.69,
+                        "unit": "fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "MAP3K13"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-31",
+                "chromosome": "3",
+                "startPosition": 169482000,
+                "endPosition": 169483150,
+                "copyNumberMetrics": [
+                    {
+                        "value": 0.0,
+                        "unit": "absolute copy number"
+                    },
+                    {
+                        "value": 1.65,
+                        "unit": "fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "TERC"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -739,23 +747,23 @@
             },
             {
                 "itemId": "variant-32",
-                "chromosome": "8",
-                "startPosition": 90982591,
-                "endPosition": 90983524,
+                "chromosome": "3",
+                "startPosition": 191820777,
+                "endPosition": 192487207,
                 "copyNumberMetrics": [
                     {
                         "value": 0.0,
                         "unit": "absolute copy number"
                     },
                     {
-                        "value": 0.5,
+                        "value": 3.92,
                         "unit": "fold-change"
                     }
                 ],
-                "copyNumberAlterationType": "loss",
+                "copyNumberAlterationType": "amplification",
                 "transcripts": [
                     {
-                        "geneSymbol": "NBN"
+                        "geneSymbol": "FGF12"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -764,23 +772,23 @@
             },
             {
                 "itemId": "variant-33",
-                "chromosome": "1",
-                "startPosition": 150511135,
-                "endPosition": 150600810,
+                "chromosome": "12",
+                "startPosition": 18435015,
+                "endPosition": 18800962,
                 "copyNumberMetrics": [
                     {
                         "value": 0.0,
                         "unit": "absolute copy number"
                     },
                     {
-                        "value": 1.99,
+                        "value": 1.39,
                         "unit": "fold-change"
                     }
                 ],
                 "copyNumberAlterationType": "amplification",
                 "transcripts": [
                     {
-                        "geneSymbol": "MCL1"
+                        "geneSymbol": "PIK3C2G"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -789,23 +797,23 @@
             },
             {
                 "itemId": "variant-34",
-                "chromosome": "17",
-                "startPosition": 66511540,
-                "endPosition": 66526590,
+                "chromosome": "19",
+                "startPosition": 42788825,
+                "endPosition": 42799343,
                 "copyNumberMetrics": [
                     {
                         "value": 0.0,
                         "unit": "absolute copy number"
                     },
                     {
-                        "value": 2.28,
+                        "value": 1.58,
                         "unit": "fold-change"
                     }
                 ],
                 "copyNumberAlterationType": "amplification",
                 "transcripts": [
                     {
-                        "geneSymbol": "PRKAR1A"
+                        "geneSymbol": "CIC"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -814,23 +822,23 @@
             },
             {
                 "itemId": "variant-35",
-                "chromosome": "2",
-                "startPosition": 58386852,
-                "endPosition": 58468465,
+                "chromosome": "13",
+                "startPosition": 28528526,
+                "endPosition": 28715055,
                 "copyNumberMetrics": [
                     {
                         "value": 0.0,
                         "unit": "absolute copy number"
                     },
                     {
-                        "value": 1.52,
+                        "value": 1.62,
                         "unit": "fold-change"
                     }
                 ],
                 "copyNumberAlterationType": "amplification",
                 "transcripts": [
                     {
-                        "geneSymbol": "FANCL"
+                        "geneSymbol": "FLT3"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -839,23 +847,98 @@
             },
             {
                 "itemId": "variant-36",
-                "chromosome": "14",
-                "startPosition": 35871177,
-                "endPosition": 35873850,
+                "chromosome": "12",
+                "startPosition": 15475633,
+                "endPosition": 15747987,
                 "copyNumberMetrics": [
                     {
                         "value": 0.0,
                         "unit": "absolute copy number"
                     },
                     {
-                        "value": 2.15,
+                        "value": 1.74,
                         "unit": "fold-change"
                     }
                 ],
                 "copyNumberAlterationType": "amplification",
                 "transcripts": [
                     {
-                        "geneSymbol": "NFKBIA"
+                        "geneSymbol": "PTPRO"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-37",
+                "chromosome": "14",
+                "startPosition": 36947748,
+                "endPosition": 37023501,
+                "copyNumberMetrics": [
+                    {
+                        "value": 0.0,
+                        "unit": "absolute copy number"
+                    },
+                    {
+                        "value": 3.46,
+                        "unit": "fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "NKX2-1"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-38",
+                "chromosome": "3",
+                "startPosition": 138374230,
+                "endPosition": 138478185,
+                "copyNumberMetrics": [
+                    {
+                        "value": 0.0,
+                        "unit": "absolute copy number"
+                    },
+                    {
+                        "value": 2.25,
+                        "unit": "fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "PIK3CB"
+                    }
+                ],
+                "sampleItemId": "sequence-1-tumor-dna",
+                "variantOrigin": "somatic",
+                "reported": true
+            },
+            {
+                "itemId": "variant-39",
+                "chromosome": "20",
+                "startPosition": 30253751,
+                "endPosition": 30310021,
+                "copyNumberMetrics": [
+                    {
+                        "value": 0.0,
+                        "unit": "absolute copy number"
+                    },
+                    {
+                        "value": 2.3,
+                        "unit": "fold-change"
+                    }
+                ],
+                "copyNumberAlterationType": "amplification",
+                "transcripts": [
+                    {
+                        "geneSymbol": "BCL2L1"
                     }
                 ],
                 "sampleItemId": "sequence-1-tumor-dna",
@@ -877,7 +960,7 @@
             "biomarkerType": "TMB",
             "biomarkerMetrics": [
                 {
-                    "value": 2.52,
+                    "value": 0,
                     "unit": "mutations-per-megabase",
                     "metricType": "mutations-per-megabase"
                 }

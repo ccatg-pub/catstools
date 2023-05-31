@@ -108,27 +108,23 @@ class GeneAnalysisPlot(Aggregation):
 
     def get_input_tid(self) -> str:
         # get main.py current path
-        main_py_path = os.getcwd()
-        return os.path.join(main_py_path, "catstools", "aggregation",
-                            "gene_analysis_summary", "input_data", 'transcriptionID.tsv')
+        main_py_path = os.path.dirname(os.path.abspath(__file__))
+        return os.path.join(main_py_path, "input_data", 'transcriptionID.tsv')
 
     def get_input_strand(self) -> str:
         # get main.py current path
-        main_py_path = os.getcwd()
-        return os.path.join(main_py_path, "catstools", "aggregation",
-                            "gene_analysis_summary", "input_data", 'gene_strand_transcript.tsv')
+        main_py_path = os.path.dirname(os.path.abspath(__file__))
+        return os.path.join(main_py_path, "input_data", 'gene_strand_transcript.tsv')
 
     def get_input_aliases(self) -> str:
         # get main.py current path
-        main_py_path = os.getcwd()
-        return os.path.join(main_py_path, "catstools", "aggregation",
-                            "gene_analysis_summary", "input_data", 'gene_aliases.tsv')
+        main_py_path = os.path.dirname(os.path.abspath(__file__))
+        return os.path.join(main_py_path, "input_data", 'gene_aliases.tsv')
 
     def get_input_chromosome(self) -> str:
         # get main.py current path
-        main_py_path = os.getcwd()
-        return os.path.join(main_py_path, "catstools", "aggregation",
-                            "gene_analysis_summary", "input_data", 'chromosome_length_GRCh37.tsv')
+        main_py_path = os.path.dirname(os.path.abspath(__file__))
+        return os.path.join(main_py_path, "input_data", 'chromosome_length_GRCh37.tsv')
 
     def draw_graphical_stem(self, mut_type_df, mut_type, mut_type_list):
         """

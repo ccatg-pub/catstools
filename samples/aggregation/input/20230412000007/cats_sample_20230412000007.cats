@@ -1050,7 +1050,7 @@
             "biomarkerType": "TMB",
             "biomarkerMetrics": [
                 {
-                    "value": 2.52,
+                    "value": 0,
                     "unit": "mutations-per-megabase",
                     "metricType": "mutations-per-megabase"
                 }
