@@ -63,9 +63,8 @@ class CircosPlot(Aggregation):
 
     def get_input_tid(self) -> str:
         # get main.py current path
-        main_py_path = os.getcwd()
-        return os.path.join(main_py_path, "catstools", "aggregation",
-                            "circos_plot", "input_data", 'transcriptionID.tsv')
+        main_py_path = os.path.dirname(os.path.abspath(__file__))
+        return os.path.join(main_py_path, "input_data", 'transcriptionID.tsv')
 
     def create_snv(self, output_for_circos, cir_plt):
         snp_snv = os.path.join(output_for_circos, self.SNP_SNV + self.TXT_EXTENSION)

@@ -299,6 +299,9 @@ Samples for each mode
 1: onco_plot  
 <kbd><a href="samples/aggregation/output/1onco_plot/oncogene_x2.svg"><img src="samples/aggregation/output/1onco_plot/oncogene_x2.svg" width="820"></a></kbd>  
   
+1: onco_plot (TMB)  
+<kbd><a href="samples/aggregation/output/1onco_plot/TMB_value_sort.svg"><img src="samples/aggregation/output/1onco_plot/TMB_value_sort.svg" width="820"></a></kbd>  
+  
 2: circos_plot  
 <kbd><a href="samples/aggregation/output/2circos_plot/NGCircos_readme.svg"><img src="samples/aggregation/output/2circos_plot/NGCircos_readme.svg" width="820"></a></kbd>  
 &emsp;&ensp;[Note]  

@@ -1,6 +1,8 @@
 # this documentation makes use of pandas, numpy, and palettable
 import os
 
+# import aggregation
+# class OncoPlot(aggregation.Aggregation):
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -115,6 +117,7 @@ class OncoPlot(Aggregation):
     # output file name
     AGD_SVG = 'AGD.svg'
     TMB_SVG = 'TMB.svg'
+    TMB_VALUE_SORT_SVG = 'TMB_value_sort.svg'
     ONCOGENE_X_SVG = 'oncogene_x.svg'
     ONCOGENE_XY_SVG = 'oncogene_xy.svg'
     ONCOGENE_X2_SVG = 'oncogene_x2.svg'
@@ -130,7 +133,8 @@ class OncoPlot(Aggregation):
             return None
 
         # TMB Data Frame
-        tmb_df = self.get_tmb_df(target_mut_df)
+        tmb_id_sort_df = self.get_tmb_df(target_mut_df, self.SAMPLE_ID)
+        tmb_value_sort_df = self.get_tmb_df(target_mut_df, self.VALUE_COL)
         # Frequency
         mut_df_pre = self.get_mut_df_pre(target_mut_df)
         mut_freq = self.get_mut_freq(mut_df_pre, self.CATEGORY, self.CATEGORY_NOT_ALL)
@@ -147,7 +151,11 @@ class OncoPlot(Aggregation):
         # Age, Disease, Gender
         self.draw_patient_information_graph(mut_df_pre, mut_df, output_for_oncoplot)
         # TMB
-        self.draw_tmb_graph(tmb_df, output_for_oncoplot)
+        self.draw_tmb_graph(tmb_id_sort_df, output_for_oncoplot, self.TMB_SVG)
+
+        # Control to prevent duplicate output of logs without TMB
+        if len(tmb_value_sort_df) != 0:
+            self.draw_tmb_graph(tmb_value_sort_df, output_for_oncoplot, self.TMB_VALUE_SORT_SVG)
 
         # define mapping, shrink
         bar_mapping = self.get_bar_mapping()
@@ -194,7 +202,7 @@ class OncoPlot(Aggregation):
 
         return target_df
 
-    def get_tmb_df(self, target_df):
+    def get_tmb_df(self, target_df, sort_col):
         # import data
         base_tmb_df = target_df.query(self.TYPE_TMB)
         # Extract the top 100 sample IDs
@@ -203,7 +211,13 @@ class OncoPlot(Aggregation):
         tmb_df = pd.merge(base_tmb_df, excerpt_tmb_df, on=self.SAMPLE_ID, how=self.INNER)
         # Convert TMB values to float type
         # to correctly reflect y-axis values in graphs
+        # (Default: sorted by "Sample_id" column)
         tmb_df[self.VALUE_COL] = tmb_df[self.VALUE_COL].astype(float)
+
+        # Generate data frames sorted by TMB value in descending order
+        if sort_col == self.VALUE_COL:
+            tmb_df = tmb_df.sort_values(by=[self.VALUE_COL, self.ID_RANK], ascending=[False, True])
+
         # column renaming
         rename_columns = {self.SAMPLE_ID: self.SAMPLE}
 
@@ -385,7 +399,7 @@ class OncoPlot(Aggregation):
             # Close a saved graph
             plt.close()
 
-    def draw_tmb_graph(self, tmb_df, output_dir):
+    def draw_tmb_graph(self, tmb_df, output_dir, svg_name):
         """
         Draw a graph about TMB information.
         """
@@ -413,9 +427,10 @@ class OncoPlot(Aggregation):
             cat_comut.add_unified_legend()
 
             # Save TMB
-            tmb_save = os.path.join(output_dir, self.TMB_SVG)
+            tmb_save = os.path.join(output_dir, svg_name)
             cat_comut.figure.savefig(tmb_save, bbox_inches=self.TIGHT, dpi=600)
-            print('TMB plot')
+            svg_no_extension = svg_name.split('.')[0]
+            print(f'{svg_no_extension} plot')
 
             # Open memory
             plt.clf()
