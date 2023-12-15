@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import os
 import warnings
 
 import matplotlib as mpl
+import pandas as pd
 
 
 class Aggregation():
@@ -17,6 +19,8 @@ class Aggregation():
     VALUE_COL = 'Value'
     CHROMOSOME1 = 'Chromosome1'
     CHROMOSOME2 = 'Chromosome2'
+    STANDARD_GENE = 'standard_gene'
+    ALIASES = 'aliases'
 
     # Capital letter
     REFERENCE_ALLELE_1STL = 'ReferenceAllele_1stL'
@@ -68,6 +72,7 @@ class Aggregation():
     ORIGIN_SOMATIC = 'Origin_Type=="somatic"'
     NOT_TYPE_MSI = 'not Type=="MSI"'
     NOT_TYPE_TMB = 'not Type=="TMB"'
+    TYPE_MSI = 'Type=="MSI"'
     TYPE_TMB = 'Type=="TMB"'
     TYPE_SNV = 'Type=="SNV"'
     TYPE_AMP = 'Type=="Amp"'
@@ -76,6 +81,8 @@ class Aggregation():
 
     SEPALATOR_LINE = '-----------------------------------'
     NO_DATA = '-'
+    GENE_ANALYSIS = 'gene_analysis_summary'
+    INPUT_DATA_DIR = 'input_data'
 
     # determine backends of matplotlib
     mpl.use('Agg')
@@ -85,6 +92,22 @@ class Aggregation():
     def __init__(self):
         # constructor
         pass
+
+    def get_input_dir_path(self, file_name) -> str:
+        return os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            self.GENE_ANALYSIS, self.INPUT_DATA_DIR, file_name)
+
+    def get_input_tid(self) -> str:
+        return self.get_input_dir_path('transcriptionID.tsv')
+
+    def get_input_strand(self) -> str:
+        return self.get_input_dir_path('gene_strand_transcript.tsv')
+
+    def get_input_aliases(self) -> str:
+        return self.get_input_dir_path('gene_aliases.tsv')
+
+    def get_input_chromosome(self) -> str:
+        return self.get_input_dir_path('chromosome_length_GRCh37.tsv')
 
     def set_allele_info(self, in_df):
         df_type = in_df
@@ -137,18 +160,17 @@ class Aggregation():
         If an unexpected gene is included, it is excluded from the data frame
         and the unexpected gene is output to the console.
         """
-        # Maintains original data
-        conv_gene_df = gene_df.copy()
+        std_gene_df = self.create_standard_gene_df(gene_df)
         # For storing a list of unexpected genes
         no_marker_list = []
 
         # If no value exists, set the Chromosome, Start Position,
         # and End Position information that each gene has.
-        for gene_idx in range(conv_gene_df.shape[0]):
-            if conv_gene_df[self.TYPE].iat[gene_idx] == self.FUSION:
+        for gene_idx in range(std_gene_df.shape[0]):
+            if std_gene_df[self.TYPE].iat[gene_idx] == self.FUSION:
                 continue
 
-            target_marker_name = conv_gene_df[self.MARKER_NAME].iat[gene_idx]
+            target_marker_name = std_gene_df[self.MARKER_NAME].iat[gene_idx]
             # Obtain information on the gene of the transcript, if available.
             trans_info = trans_df[trans_df[self.MARKER_NAME] == target_marker_name]
 
@@ -161,8 +183,7 @@ class Aggregation():
         # to the console.
         if len(no_marker_list) != 0:
             print('List of markers not included in the aggregation.\n'
-                  '(because there is no information on the gene '
-                  'for the transcript.)')
+                  '(because there is no information on the gene for the transcript.)')
             print(self.SEPALATOR_LINE)
 
             # Exclude gene duplications
@@ -173,7 +194,7 @@ class Aggregation():
 
             print(f'{self.SEPALATOR_LINE}\n')
 
-        target_gene_df = conv_gene_df.query(f"{self.MARKER_NAME} not in {no_marker_list}")
+        target_gene_df = std_gene_df.query(f"{self.MARKER_NAME} not in {no_marker_list}")
 
         return target_gene_df
 
@@ -203,18 +224,38 @@ class Aggregation():
             if any([conv_gene_df[self.CHROMOSOME1].iat[gene_idx] == self.NO_DATA,
                     conv_gene_df[self.START_POS1].iat[gene_idx] == self.NO_DATA,
                     conv_gene_df[self.END_POS1].iat[gene_idx] == self.NO_DATA]):
-
                 # Chromosome1
                 if conv_gene_df[self.CHROMOSOME1].iat[gene_idx] == self.NO_DATA:
-                    conv_gene_df[self.CHROMOSOME1].iat[gene_idx] = \
-                        gene_chr_pos_info[self.CHROMOSOME].iat[0]
+                    conv_gene_df[self.CHROMOSOME1].iat[gene_idx] = gene_chr_pos_info[self.CHROMOSOME].iat[0]
                 # Start1
                 if conv_gene_df[self.START_POS1].iat[gene_idx] == self.NO_DATA:
-                    conv_gene_df[self.START_POS1].iat[gene_idx] = \
-                        gene_chr_pos_info[self.START_P].iat[0]
+                    conv_gene_df[self.START_POS1].iat[gene_idx] = gene_chr_pos_info[self.START_P].iat[0]
                 # End1
                 if conv_gene_df[self.END_POS1].iat[gene_idx] == self.NO_DATA:
-                    conv_gene_df[self.END_POS1].iat[gene_idx] = \
-                        gene_chr_pos_info[self.END_P].iat[0]
+                    conv_gene_df[self.END_POS1].iat[gene_idx] = gene_chr_pos_info[self.END_P].iat[0]
 
         return conv_gene_df
+
+    def create_standard_gene_df(self, gene_df):
+        """
+        Generate a data frame that converts possible gene readings to standard gene names.
+        """
+        std_gene_df = gene_df.copy()
+        gene_aliases = pd.read_csv(self.get_input_aliases(), sep=self.SEP_TAB)
+
+        for gene_df_idx in range(gene_df.shape[0]):
+            marker = gene_df[self.MARKER_NAME].iat[gene_df_idx]
+            aliases_marker = gene_aliases[gene_aliases[self.ALIASES] == marker]
+            aliases_marker_len = len(aliases_marker)
+
+            # If multiple gene synonyms are present, output to log.
+            if aliases_marker_len >= 2:
+                print(f'{len(aliases_marker)} synonyms for {marker} exist and cannot be converted to '
+                      f'standard gene names.')
+
+            # If a gene synonym exists and can be converted to a standard gene name, it is converted.
+            elif aliases_marker_len == 1:
+                std_marker = aliases_marker[self.STANDARD_GENE].iat[0]
+                std_gene_df[self.MARKER_NAME].iat[gene_df_idx] = std_marker
+
+        return std_gene_df
